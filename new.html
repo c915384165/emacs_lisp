@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-08-26 Wed 16:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="mac" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org60a8e1b">1. 1 List Processing</a>
+<ul>
+<li><a href="#org7cdcc3b">1.1. 1.1 Lisp Lists</a>
+<ul>
+<li><a href="#org2903776">1.1.1. 1.1.1 Lisp Atoms</a></li>
+<li><a href="#org9adf8a1">1.1.2. 1.1.2 Whitespace in Lists</a></li>
+<li><a href="#org47a661a">1.1.3. 1.1.3 GNU Emacs Helps You Type Lists</a></li>
+</ul>
+</li>
+<li><a href="#org145db94">1.2. 1.2 Run a Program</a></li>
+<li><a href="#orgc633645">1.3. 1.3 Generate an Error Message</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org60a8e1b" class="outline-2">
+<h2 id="org60a8e1b"><span class="section-number-2">1</span> 1 List Processing</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org7cdcc3b" class="outline-3">
+<h3 id="org7cdcc3b"><span class="section-number-3">1.1</span> 1.1 Lisp Lists</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org2903776" class="outline-4">
+<h4 id="org2903776"><span class="section-number-4">1.1.1</span> 1.1.1 Lisp Atoms</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Incidentally, the atoms that make up our universe were named such when
+they were thought to be indivisible; but it has been found that
+physical atoms are not indivisible. Parts can split off an atoms or it
+can fission into two parts of roughly equal size. Physical atoms were
+named prematurely, before their truer nature was found. In Lisp,
+certain kinds of atom, such as an array, can be separated into parts;
+but the mechanism for doing this is different from the mechanism for
+splitting a list. As far as list operations are concerned, the atoms
+of a list are unsplittable.
+</p>
+
+<p>
+As in English, the meanings of the component letters of a Lisp atom
+are different from the meaning the letters make as a word.  For
+example, the word for the South American sloth, the 'ai', is
+completely different from the two words, 'a', and 'i'.
+</p>
+
+<p>
+There are many kinds of atom in nature but only a few in Lisp: for
+example, numbers, such as 37, 511, or 1720, and symbols, such as '+',
+'foo', or 'forward-line'. The words we have listed in the examples
+above are all symbols. In everyday Lisp conversation, the word "atom"
+is not often used, because programmers usually try to be more specific
+about what kind of atom they are dealing with. Lisp programming is
+mostly about symbols (and sometimes numbers) within
+lists. (Incidentally, the preceding three word parenthetical remark is
+a proper list in Lisp, since it consists of atoms, which in this case
+are symbols, separated by whitespace and enclosed by parentheses,
+without any non-Lisp punctuation.)
+</p>
+
+<p>
+Text between double quotation marks&#x2013;even sentences or paragraphs&#x2013;is
+also an atom. Here is an example:
+</p>
+
+<p>
+'(this list includes "text between quotation marks.")
+</p>
+
+<p>
+In Lisp, all of the quoted text including the punctuation mark and the
+blank spaces is a single atom. This kind of atom is called a string
+(for "string of characters") and is the sort of thing that is used for
+messages that a computer can print for a human to read. Strings are a
+different kind of atom than numbers or symbols and are used
+differently.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9adf8a1" class="outline-4">
+<h4 id="org9adf8a1"><span class="section-number-4">1.1.2</span> 1.1.2 Whitespace in Lists</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<hr />
+
+<p>
+The amount of whitespace in a list does not matter. From the point of
+view of the Lisp language.
+</p>
+
+<p>
+'(this list
+looks like this)
+</p>
+
+<p>
+is exactly the same as this:
+</p>
+
+<p>
+'(this list looks like this)
+</p>
+
+<p>
+Both examples show what to Lisp is the same list, the list made up of
+the symbols 'this', 'list', 'looks', 'like' in that order.
+</p>
+
+<p>
+Extra whitespace and newlines are designed to make a list more
+readable by humans. When Lisp reads the expression, it gets rid of all
+the extra whitespace (but it needs to have at least one space between
+atoms in order to tell them apart.)
+</p>
+
+<p>
+Odd as it seems, the examples we have seen cover almost all of what
+Lisp lists except that the list may in Lisp looks more or less like
+one of these examples, except that the list may be longer and more
+complex. In brief, a list is between parentheses, a string is between
+quotation marks, a symbol looks like a word, and a number looks like a
+number. (For certain situations, square brackets, dots and a few other
+special characters may be used; however, we will go quite far without
+them.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org47a661a" class="outline-4">
+<h4 id="org47a661a"><span class="section-number-4">1.1.3</span> 1.1.3 GNU Emacs Helps You Type Lists</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<hr />
+
+<p>
+When you type a Lisp expression in GNU Emacs using either Lisp
+Interaction mode or Emacs Lisp mode, you have available to you several
+commands to format the Lisp expression so it is easy to read. For
+example, pressing the TAB key automatically indents the line the
+cursor is on by the right amount. A command to properly indent the
+code in a region is customarily bound to M-C-\. Indentation is
+designed so that you can see which elements of a list belong to which
+list&#x2013;elements of a sub-list are indented more than the elements of
+the enclosing list.
+</p>
+
+<p>
+In addition, when you type a closing parenthesis, Emacs momentarily
+jumps the cursor back to the matching opening parenthesis, so you can
+see which one it is. This is very useful, since every list you type in
+Lisp must have its closing parenthesis match its opening
+parenthesis. (See Section "Major Modes" in <i>The GNU Emacs Manual</i>, for
+more information about Emacs's modes.)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org145db94" class="outline-3">
+<h3 id="org145db94"><span class="section-number-3">1.2</span> 1.2 Run a Program</h3>
+<div class="outline-text-3" id="text-1-2">
+<hr />
+<p>
+A list in Lisp&#x2013;any list&#x2013;is a program ready to run. If you run it
+(for which the Lisp jargon is <i>evaluate</i>), the computer will do one of
+three things: 
+</p>
+<ul class="org-ul">
+<li>do nothing except return to you the list itself;</li>
+<li>send you an error message;</li>
+<li>or, threat the first symbol in the list as a command to do
+something.</li>
+</ul>
+<p>
+(Usually, of course, it is the last of these three things that you
+really want!)
+</p>
+
+<p>
+The single apostrophe, ', that I put in front of some of the example
+lists in preceding sections is called a quote; when it precedes a
+list, ait tells Lisp to do nothing with the list, other than take it
+as it is written. But if there is no quote preceding a list, the first
+item of the list is special: it is a command for the computer to
+obey. (In Lisp, these commands are called <i>functions</i>.) The list (+
+2 2) shown above did not have a quote in front of it, so Lisp
+understands that the + is an instruction to do something with the rest
+of the list: add the numbers that follow.
+</p>
+
+<p>
+If you are reading this inside of GNU Emacs in Info, here is how you
+can evaluate such a list: place your cursor immediately after the right
+hand parenthesis of the following list and then type <i>C-x C-e:</i>
+</p>
+
+<p>
+(+ 2 2)
+</p>
+
+<p>
+You will see the number 4 appear in the echo area<sup>2</sup><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. (What you have
+just done is evaluate the list. The echo area is the line at the
+bottom of the screen that displays or echoes text.) Now try the same
+thing with a quoted list: place the cursor right after the following
+list and type <i>C-x C-e</i>:
+</p>
+
+<p>
+'(this is a quoted list)
+</p>
+
+<p>
+You will see (this is a quoted list) appear in the echo area.
+</p>
+
+<p>
+In both cases, what you are doing is giving a command to the program
+inside of GNU Emacs called the <i>Lisp interpreter</i>&#x2013;giving the
+interpreter a command to evaluate the expression. The name of the Lisp
+interpreter comes from the word for the task done by a human who comes
+up with the meaning of an expression&#x2013;who interprets it.
+</p>
+
+<p>
+You can also evaluate an atom that is not part of a list&#x2013;one that is
+not surrounded by parentheses; again, the Lisp interpreter translates
+from the humanly readable expression to the language of the
+computer. But before discussing this (see Section 1.7 "Variables",
+page 9), we will discuss what the Lisp interpreter does when you make
+an error.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc633645" class="outline-3">
+<h3 id="orgc633645"><span class="section-number-3">1.3</span> 1.3 Generate an Error Message</h3>
+<div class="outline-text-3" id="text-1-3">
+<hr />
+<p>
+Partly so you won't worry if you do it accidentally, we will now give
+a command to the Lisp interpreter that generates an error
+message. This is a harmless activity; and indeed, we will often try to
+generate error messages intentionally. Once you understand the jargon,
+error messages can be informative. Instead of being called "error"
+messages, they should be called "help" messages. They are like
+signposts to a traveler in a strange country; deciphering them can be
+hard, but once understood, they can point the way.
+</p>
+
+<p>
+The error message is generated by a built-in GNU Emacs debugger. We
+will enter the debugger. You get out of the debugger by typing q.
+</p>
+
+<p>
+What we will do is evaluate a list that is not quoted and does not
+have a meaningful command as its first element. Here is a list almost
+exactly the same as the one we just used, but without the single-quote
+in front of it. Position the cursor right after it and type C-x C-e:
+</p>
+
+<p>
+(this is an unquoted list)
+</p>
+
+<p>
+A \*Backtrace\* window
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.baidu.com">https://www.baidu.com</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: mac</p>
+<p class="date">Created: 2020-08-26 Wed 16:24</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

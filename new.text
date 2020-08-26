@@ -1,0 +1,91 @@
+Incidentally, the atoms that make up our universe were named such when
+they were thought to be indivisible; but it has been found that
+physical atoms are not indivisible. Parts can split off an atoms or it
+can fission into two parts of roughly equal size. Physical atoms were
+named prematurely, before their truer nature was found. In Lisp,
+certain kinds of atom, such as an array, can be separated into parts;
+but the mechanism for doing this is different from the mechanism for
+splitting a list. As far as list operations are concerned, the atoms
+of a list are unsplittable.
+
+As in English, the meanings of the component letters of a Lisp atom
+are different from the meaning the letters make as a word.  For
+example, the word for the South American sloth, the 'ai', is
+completely different from the two words, 'a', and 'i'.
+
+There are many kinds of atom in nature but only a few in Lisp: for
+example, numbers, such as 37, 511, or 1720, and symbols, such as '+',
+'foo', or 'forward-line'. The words we have listed in the examples
+above are all symbols. In everyday Lisp conversation, the word "atom"
+is not often used, because programmers usually try to be more specific
+about what kind of atom they are dealing with. Lisp programming is
+mostly about symbols (and sometimes numbers) within
+lists. (Incidentally, the preceding three word parenthetical remark is
+a proper list in Lisp, since it consists of atoms, which in this case
+are symbols, separated by whitespace and enclosed by parentheses,
+without any non-Lisp punctuation.)
+
+Text between double quotation marks--even sentences or paragraphs--is
+also an atom. Here is an example:
+
+     '(this list includes "text between quotation marks.")
+
+In Lisp, all of the quoted text including the punctuation mark and the
+blank spaces is a single atom. This kind of atom is called a string
+(for "string of characters") and is the sort of thing that is used for
+messages that a computer can print for a human to read. Strings are a
+different kind of atom than numbers or symbols and are used
+differently.
+
+*** 1.1.2 Whitespace in Lists
+--------------------------------------------------------------------
+
+The amount of whitespace in a list does not matter. From the point of
+view of the Lisp language.
+
+'(this list
+looks like this)
+
+is exactly the same as this:
+
+'(this list looks like this)
+
+Both examples show what to Lisp is the same list, the list made up of
+the symbols 'this', 'list', 'looks', 'like' in that order.
+
+Extra whitespace and newlines are designed to make a list more
+readable by humans. When Lisp reads the expression, it gets rid of all
+the extra whitespace (but it needs to have at least one space between
+atoms in order to tell them apart.)
+
+Odd as it seems, the examples we have seen cover almost all of what
+Lisp lists except that the list may in Lisp looks more or less like
+one of these examples, except that the list may be longer and more
+complex. In brief, a list is between parentheses, a string is between
+quotation marks, a symbol looks like a word, and a number looks like a
+number. (For certain situations, square brackets, dots and a few other
+special characters may be used; however, we will go quite far without
+them.)
+
+*** 1.1.3 GNU Emacs Helps You Type Lists
+---------------------------------------------------------------------
+
+When you type a Lisp expression in GNU Emacs using either Lisp
+Interaction mode or Emacs Lisp mode, you have available to you several
+commands to format the Lisp expression so it is easy to read. For
+example, pressing the TAB key automatically indents the line the
+cursor is on by the right amount. A command to properly indent the
+code in a region is customarily bound to M-C-\. Indentation is
+designed so that you can see which elements of a list belong to which
+list--elements of a sub-list are indented more than the elements of
+the enclosing list.
+
+In addition, when you type a closing parenthesis, Emacs momentarily
+jumps the cursor back to the matching opening parenthesis, so you can
+see which one it is. This is very useful, since every list you type in
+Lisp must have its closing parenthesis match its opening
+parenthesis. (See Section "Major Modes" in The GNU Emacs Manual, for
+more information about Emacs's modes.)
+
+
+
