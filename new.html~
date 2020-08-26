@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-08-26 Wed 21:23 -->
+<!-- 2020-08-26 Wed 16:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="macpro" />
+<meta name="author" content="mac" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -161,19 +161,6 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -198,7 +185,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -246,32 +233,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org090c404">1. 1 List Processing</a>
+<li><a href="#org60a8e1b">1. 1 List Processing</a>
 <ul>
-<li><a href="#org2ce7249">1.1. 1.1 Lisp Lists</a>
+<li><a href="#org7cdcc3b">1.1. 1.1 Lisp Lists</a>
 <ul>
-<li><a href="#org24d8458">1.1.1. 1.1.1 Lisp Atoms</a></li>
-<li><a href="#org5724d99">1.1.2. 1.1.2 Whitespace in Lists</a></li>
-<li><a href="#orge2bfaf8">1.1.3. 1.1.3 GNU Emacs Helps You Type Lists</a></li>
+<li><a href="#org2903776">1.1.1. 1.1.1 Lisp Atoms</a></li>
+<li><a href="#org9adf8a1">1.1.2. 1.1.2 Whitespace in Lists</a></li>
+<li><a href="#org47a661a">1.1.3. 1.1.3 GNU Emacs Helps You Type Lists</a></li>
 </ul>
 </li>
-<li><a href="#orgafff6c8">1.2. 1.2 Run a Program</a></li>
-<li><a href="#orga36fe5b">1.3. 1.3 Generate an Error Message</a></li>
+<li><a href="#org145db94">1.2. 1.2 Run a Program</a></li>
+<li><a href="#orgc633645">1.3. 1.3 Generate an Error Message</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org090c404" class="outline-2">
-<h2 id="org090c404"><span class="section-number-2">1</span> 1 List Processing</h2>
+<div id="outline-container-org60a8e1b" class="outline-2">
+<h2 id="org60a8e1b"><span class="section-number-2">1</span> 1 List Processing</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org2ce7249" class="outline-3">
-<h3 id="org2ce7249"><span class="section-number-3">1.1</span> 1.1 Lisp Lists</h3>
+<div id="outline-container-org7cdcc3b" class="outline-3">
+<h3 id="org7cdcc3b"><span class="section-number-3">1.1</span> 1.1 Lisp Lists</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org24d8458" class="outline-4">
-<h4 id="org24d8458"><span class="section-number-4">1.1.1</span> 1.1.1 Lisp Atoms</h4>
+<div id="outline-container-org2903776" class="outline-4">
+<h4 id="org2903776"><span class="section-number-4">1.1.1</span> 1.1.1 Lisp Atoms</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Incidentally, the atoms that make up our universe were named such when
@@ -326,8 +313,8 @@ differently.
 </div>
 </div>
 
-<div id="outline-container-org5724d99" class="outline-4">
-<h4 id="org5724d99"><span class="section-number-4">1.1.2</span> 1.1.2 Whitespace in Lists</h4>
+<div id="outline-container-org9adf8a1" class="outline-4">
+<h4 id="org9adf8a1"><span class="section-number-4">1.1.2</span> 1.1.2 Whitespace in Lists</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <hr />
 
@@ -374,8 +361,8 @@ them.)
 </div>
 </div>
 
-<div id="outline-container-orge2bfaf8" class="outline-4">
-<h4 id="orge2bfaf8"><span class="section-number-4">1.1.3</span> 1.1.3 GNU Emacs Helps You Type Lists</h4>
+<div id="outline-container-org47a661a" class="outline-4">
+<h4 id="org47a661a"><span class="section-number-4">1.1.3</span> 1.1.3 GNU Emacs Helps You Type Lists</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <hr />
 
@@ -403,8 +390,8 @@ more information about Emacs's modes.)
 </div>
 </div>
 
-<div id="outline-container-orgafff6c8" class="outline-3">
-<h3 id="orgafff6c8"><span class="section-number-3">1.2</span> 1.2 Run a Program</h3>
+<div id="outline-container-org145db94" class="outline-3">
+<h3 id="org145db94"><span class="section-number-3">1.2</span> 1.2 Run a Program</h3>
 <div class="outline-text-3" id="text-1-2">
 <hr />
 <p>
@@ -446,7 +433,7 @@ hand parenthesis of the following list and then type <i>C-x C-e:</i>
 </p>
 
 <p>
-You will see the number 4 appear in the echo area<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. (What you have
+You will see the number 4 appear in the echo area<sup>2</sup><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. (What you have
 just done is evaluate the list. The echo area is the line at the
 bottom of the screen that displays or echoes text.) Now try the same
 thing with a quoted list: place the cursor right after the following
@@ -480,30 +467,31 @@ an error.
 </div>
 </div>
 
-<div id="outline-container-orga36fe5b" class="outline-3">
-<h3 id="orga36fe5b"><span class="section-number-3">1.3</span> 1.3 Generate an Error Message</h3>
+<div id="outline-container-orgc633645" class="outline-3">
+<h3 id="orgc633645"><span class="section-number-3">1.3</span> 1.3 Generate an Error Message</h3>
 <div class="outline-text-3" id="text-1-3">
 <hr />
 <p>
-Partly so you won't worry if you do it accidentally, we will now give a command to
-the Lisp interpreter that generates an error message. This is a harmless activity;
-and indeed, we will often try to generate error messages intentionally. Once you
-understand the jargon, error messages can be informative. Instead of being called
-"error" messages, they should be called "help" messages. They are like signposts to
-a traveler in a strange country; deciphering them can be hard, but once understood,
-they can point the way.
+Partly so you won't worry if you do it accidentally, we will now give
+a command to the Lisp interpreter that generates an error
+message. This is a harmless activity; and indeed, we will often try to
+generate error messages intentionally. Once you understand the jargon,
+error messages can be informative. Instead of being called "error"
+messages, they should be called "help" messages. They are like
+signposts to a traveler in a strange country; deciphering them can be
+hard, but once understood, they can point the way.
 </p>
 
 <p>
-   The error message is generated by a build-in GNU Emacs debugger. We will enter
-the debugger. You get out of the debugger by typing q.
+The error message is generated by a built-in GNU Emacs debugger. We
+will enter the debugger. You get out of the debugger by typing q.
 </p>
 
 <p>
-   What we will do is evaluate a list that is not quoted and does not have a
-meaningful command as its first element. Here is a list almost exactly the same as
-the one we just used, but without the single-quote in front of it. Position the
-cursor right after it and type C-x C-e:
+What we will do is evaluate a list that is not quoted and does not
+have a meaningful command as its first element. Here is a list almost
+exactly the same as the one we just used, but without the single-quote
+in front of it. Position the cursor right after it and type C-x C-e:
 </p>
 
 <p>
@@ -511,36 +499,7 @@ cursor right after it and type C-x C-e:
 </p>
 
 <p>
-    A <b>Backtrace</b> window will open up and you should see the following in it:
-Your cursor will be in this window (you may have to wait a few seconds before it
-becomes visible). To quit the debugger and make the debugger window go away, type:
-</p>
-
-<p>
-<i>q</i>
-</p>
-
-<p>
-Please type <i>q</i> right now, so you become confident that you can get out of the
-debugger. Then, type /C-x C-e again to re-enter it.
-</p>
-
-<p>
-Based on what already know, we can almost read this error message.
-</p>
-
-<p>
-   You read the \*Backtrace\* buffer from the bottom up; it tells you what Emacs
-did. When you typed <i>C-x C-e</i>, you made an interactive call to the command
-<b>eval-last-sexp</b>. <b>eval</b> is an abbreviation for "evaluate" and <b>sexp</b> is an
-abbreviation for "symbolic expression". The command means "evaluate last symbolic
-expression", which is the expression just before your cursor.
-</p>
-
-<p>
-   Each line above tells you what the Lisp interpreter evaluated next. The most
-recent action is at the top. The buffer is called the <b>Backtrace</b> buffer because it
-enables you to track Emacs backwards.
+A \*Backtrace\* window
 </p>
 </div>
 </div>
@@ -550,16 +509,15 @@ enables you to track Emacs backwards.
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-Emacs shows integer values in decimal, in octal and in hex, and also as a
-character, but let's ignore this convenience feature for now.
+<a href="https://www.baidu.com">https://www.baidu.com</a>
 </p></div></div>
 
 
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="author">Author: macpro</p>
-<p class="date">Created: 2020-08-26 Wed 21:23</p>
+<p class="author">Author: mac</p>
+<p class="date">Created: 2020-08-26 Wed 16:24</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
