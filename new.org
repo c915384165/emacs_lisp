@@ -1,5 +1,8 @@
 * 1 List Processing
 ** 1.1 Lisp Lists
+
+   '(this list has '(a list inside of it))
+
 *** 1.1.1 Lisp Atoms
 Incidentally, the atoms that make up our universe were named such when
 they were thought to be indivisible; but it has been found that
@@ -440,7 +443,49 @@ contents of the drawer holding the function definition, and vice versa.
 
 The variable fill-column illustrates a symbol with a value attached to it: in every
 GNU Emacs buffer, this symbol is set to some value, usually 72 or 70, but sometimes
-to some other value.
+to some other value. To find the value of this symbol, evaluate it by itself. If you
+are reading this in Info inside of GNU Emacs, you can do this by putting the cursor
+after the symbol and typing /C-x C-e/:
+
+    fill-column
+
+After I typed /C-x C-e/, Emacs printed the number 72 in my echo area. This is the
+value for which fill-column is set for me as I write this. It may be different for
+you in your Info buffer. Notice that the value returned as a variable is printed in
+exactly the same way as the value returned by a function carrying out its
+instructions. From the point of view of the Lisp interpreter, a value returned is a
+value returned. What kind of expression it came from ceases to matter once the value
+is known.
+
+A symbol can have any value attached to it or, to use the jargon, we can bind the
+variable to a value: to a number, such as 72; to a string, "such as this"; to a list,
+such as (spruce pine oak); we can even bind a variable to a function definition.
+
+A symbol can be bound to a value in several ways. See Section 1.0 "Setting the Value
+of a Variable", page 16, for information about one way to do this.
+
+*** 1.7.1 Error Message for a Symbol Without a Function
+
+When we evaluated fill-column to find its value as a variable, we did not place
+parentheses around the word. This is because we did not intend to use it as a
+function name.
+
+If fill-column were the first or only element of a list, the Lisp interpreter would
+attempt to find the function definition attached to it. But fill-column has no
+function definition. Try evaluating this:
+
+    (fill-column)
+
+You will create a *Backtrace* buffer that says:
+
+*** 1.7.2 Error Message for a Symbol Without a Value
+
+If you attempt to evaluate a symbol that does not have a value bound to it, you will
+receive an error message. You can see this by experimenting with our 2 plus 2
+addition. In the following expression, put your cursor right after the +, before the
+first number 2, type C-x C-e:
+
+    (+ 2 2)
 
 
 
