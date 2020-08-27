@@ -1,8 +1,8 @@
-;;(cd "/Users/macpro/")
-;;(add-hook 'find-file-hook #'(lambda () (setq default-directory (expand-file-name "/Users/macpro/"))))
+;;(cd "/Users/mac/")
+;;(add-hook 'find-file-hook #'(lambda () (setq default-directory (expand-file-name "/Users/mac/"))))
 ;;(setenv "HOME" "~/")
 
-;;(setq default-directory "/Users/macpro/")
+;;(setq default-directory "/Users/mac/")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -22,18 +22,18 @@
 ;;;;;;global set keys
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; C-x C-f to ~/
-(defun my-find-file ()
-  (interactive)
-  (let ((default-directory "/Users/macpro/"))
-    (call-interactively #'find-file)))
-(global-set-key (kbd "C-x C-f") 'my-find-file)
+;;(defun my-find-file ()
+ ;; (interactive)
+  ;;(let ((default-directory "/Users/mac/"))
+   ;; (call-interactively #'find-file)))
+;;(global-set-key (kbd "C-x C-f") 'my-find-file)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; f5 = open init.el
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun open-my-init-file()
  (interactive)
- (find-file "/Users/macpro/.emacs.d/init.el"))
+ (find-file "/Users/mac/.emacs.d/init.el"))
 (global-set-key (kbd "<f5>") 'open-my-init-file)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
