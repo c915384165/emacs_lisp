@@ -1,7 +1,11 @@
+#+OPTIONS: num:nil
+<<my-anchor>>
 * 1 List Processing
 ** 1.1 Lisp Lists
 
-   '(this list has '(a list inside of it))
+#+BEGIN_SRC emacs-lisp
+'(this list has '(a list inside of it))
+#+END_SRC
 
 *** 1.1.1 Lisp Atoms
 Incidentally, the atoms that make up our universe were named such when
@@ -119,7 +123,7 @@ If you are reading this inside of GNU Emacs in Info, here is how you
 can evaluate such a list: place your cursor immediately after the right
 hand parenthesis of the following list and then type /C-x C-e:/
 
-    (+ 2 2)
+:    (+ 2 2)
 
 You will see the number 4 appear in the echo area[fn:1]. (What you have
 just done is evaluate the list. The echo area is the line at the
@@ -127,7 +131,7 @@ bottom of the screen that displays or echoes text.) Now try the same
 thing with a quoted list: place the cursor right after the following
 list and type /C-x C-e/:
 
-    '(this is a quoted list)
+:    '(this is a quoted list)
 
 You will see (this is a quoted list) appear in the echo area.
 
@@ -276,7 +280,7 @@ the interpreter prints an error message.
 - looks at the first element whether a function definition(T:carries
   out the instructions, F: prints an error message)
 
-This is how Lisp works. Simple. There are added complications[fn:6]
+This is how Lisp works. Simple. There are added complications
 which we will get to in a minute, but these are the fundamentals. Of
 course, to write Lisp programs, you need to know how to write function
 definitions and attach them to names, and how to do this without
@@ -487,11 +491,136 @@ first number 2, type C-x C-e:
 
     (+ 2 2)
 
+(that is not this)
 
+(substring "The quick brown fox jumped.")
 
+(message "The name of this buffer is: %s." (buffer-name))
+(message (buffer-name))
+(message "The value of fill-column is %d." fill-column)
+(set 'flowers '(rose violet daisy buttercup))
+(setq flowers '(rose violet daisy buttercup))
+flowers
+(setq todo '(to do now "hello"))
+todo
+(setq trees '(pine fir oak maple)
+      herbivores '(gazellle antelope zebra))
+trees
+herbivores
+(setq counter 0)
+(setq counter (+ counter 1))
+counter
 
+(setq counter 0)
+(setq counter (+ counter 2))
+counter
+(point)
+(buffer-name)"new.org"
+(buffer-file-name)
+(current-buffer)
+(other-buffer)
+(switch-to-buffer (other-buffer))
+(other-window)
+(buffer-size)
+(point)
 
+(defun multiply-by-seven (number)
+   "Multiply NUMBER by seven."
+   (interactive "p")
+   (message "The result is %d" (* 7 number)))
+(multiply-by-seven 7)
+(if 4
+   'true
+   'false)
+(if nil
+   'true
+   'false)
+(if 0
+   'true
+   'false)
+(if 1
+   'true
+   'false)
+(if 'false
+   'true
+   'false)
+(> 5 4)
+(> 4 5)
 
+(if t
+   'true
+   'false)
+
+* 4
+** 4.2 Simplified beginning-of-buffer Definition
+The beginning-of-buffer command is a good function to start with since you are
+likely to be familiar with it and it is easy to understand. Used as an
+interactive command, beginning-of-buffer moves the cursor to the beginning of
+the buffer, leaving the mark at the previous position. It is generally bound to
+M-<. 
+
+In this section, we will discuss a shortened version of the function that shows
+how it is most frequently used. This shortened function works as writter, but it
+does not contain the code for a complex option. In another section, we will
+describe the entire function.
+
+Before looking at the code, let's consider what the function definition has to
+contain: it must include an expression that makes the function interactive so it
+can be called by typing /M-x beginning-of-buffer/ or by typing a keychord such
+as /M-</; it must include code to leave a mark at the original position in the
+buffer; and it must include code to move the cursor to the beginning of the
+buffer.
+
+Here is the complete text of the shortened version of the function:
+
+#+BEGIN_SRC emacs-lisp
+(defun simplified-beginning-of-buffer ()
+  "Move point to the beginning of the buffer;
+leave mark at previous position."
+  (interactive)
+  (push-mark)
+  (goto-char (point-min)))
+#+END_SRC
+
+Like all function definitions, this definition has five parts following the macro
+defun: 
+
+1. The name: in this example, *simplified-beginning-of-buffer*.
+2. A list of the arguments: in this example, an empty list, (),
+3. The documentation string.
+4. The interactive expression.
+5. The body.
+
+In this function definition, the argument list is empty; this means that this
+function does not require any arguments. (When we look at the definition for the
+complete function, we will see that it may be passed an optional argument.)
+
+The interactive expression tells Emacs that the function is intended to be used
+interactively. In this example, *interactive* does not have an argument because
+*simplified-beginning-of-buffer* does not require one.
+
+The body of the function consist of the two lines:
+
+: (push-mark)
+: (goto-char (point-min))
+
+The first of these lines is the expression, *(push-mark)*. When this expression is
+evaluated by the Lisp interpreter, it set a mark at the current position of the
+cursor, wherever that may be. The position of this mark is saved in the mark ring. 
+
+The next line is *(goto-char (point-min)). This expression jumps the cursor to the
+minimum point in the buffer, that is, to the beginning of the buffer (or to the
+beginning of the accessible portion of the buffer if it is narrowed. See Chapter 6
+"Narrowing and Widening", page 67.)
+
+The *push-mark* command sets a mark at the place where the cursor was located before
+it was moved to the beginning of the buffer by the (goto-char (point-min))
+expression. Consequently, you can, if you wish, go back to where you were originally
+by typing /C-x C-x./
+
+That is all there is to the function definition!
+
+[[my-anchor][内部链接]]
 
 * Footnotes
 [fn:1] Emacs shows integer values in decimal, in octal and in hex, and
@@ -499,4 +628,5 @@ also as acharacter, but let's ignore this convenience feature for now.
 [fn:2]
 [fn:3]
 [fn:4]
-[fn:5] 
+[fn:5]
+[fn:6]

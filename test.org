@@ -1,0 +1,66 @@
+My favorite scenes are (in this order)
+1. The attack of the Rohirrim
+2. Eowyn's fight with the witch king
+   + this was already my favorite scene in the book
+   + I really like Miranda Otto.
+Important actors in this film are:
+   - Elijah Wood :: He plays Frodo
+   - Sean Austin :: He plays Sam, Frodo's friend.
+
+
+: this is one line example
+: (setq this is another line)
+#+BEGIN_EXAMPLE elisp
+(setq this is one)
+this is mout line examples
+this is mout line examples
+this is mout line examplesthis is mout line examples
+this is mout line examples
+this is mout line examples
+this is mout line examples
+#+END_EXAMPLE
+
+#+CAPTION: This is the caption for the next table (or link)
+#+LABEL: tbl:table1
+| awfe | afe     | awfe | awfe | awfe |
+|------+---------+------+------+------|
+| awef | awfe    | awfe | awfe | af   |
+|      |         |      |      |      |
+|      |         |      |      | awfe |
+|------+---------+------+------+------|
+| awef | awefawf |      |      |      |
+
+
+#+BEGIN_SRC elisp
+(setq a b )
+#+END_SRC
+
+#+BEGIN_VERSE
+ Great clouds overhead
+ Tiny black birds rise and fall
+ Snow covers Emacs
+     -- AlexSchroeder
+#+END_VERSE
+
+#+BEGIN_QUOTE
+  缩进区块
+#+END_QUOTE
+
+#+BEGIN_CENTER
+Everything should be made as simple as possible, \\
+but not any simpler
+#+END_CENTER
+
+: 单行的例子以冒号开头
+
+#+BEGIN_EXAMPLE
+ 多行的例子
+ 使用区块
+#+END_EXAMPLE
+
+#+BEGIN_COMMENT
+  块注释
+  ...
+ #+END_COMMENT
+
+\ref{table1}
