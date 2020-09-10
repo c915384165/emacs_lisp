@@ -1,296 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-<!-- 2020-08-30 Sun 14:18 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="mac" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+#+OPTIONS: num:nil
+<<my-anchor>>
+* 1 List Processing
+** 1.1 Lisp Lists
 
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
-</style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
+#+BEGIN_SRC emacs-lisp
+'(this list has '(a list inside of it))
+#+END_SRC
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgfc4dcd8">1 List Processing</a>
-<ul>
-<li><a href="#org8974735">1.1 Lisp Lists</a>
-<ul>
-<li><a href="#org4821978">1.1.1 Lisp Atoms</a></li>
-<li><a href="#orgd35d8c2">1.1.2 Whitespace in Lists</a></li>
-<li><a href="#org34ef18a">1.1.3 GNU Emacs Helps You Type Lists</a></li>
-</ul>
-</li>
-<li><a href="#orgce83b62">1.2 Run a Program</a></li>
-<li><a href="#orgc65b2c2">1.3 Generate an Error Message</a></li>
-<li><a href="#org45aa5d0">1.4 Symbol Names and Functions Definitions</a></li>
-<li><a href="#org1143271">1.5 The Lisp Interpreter</a>
-<ul>
-<li><a href="#orgfdded78">1.5.1 Byte Compiling</a></li>
-</ul>
-</li>
-<li><a href="#orga3c796f">1.6 Evaluation</a>
-<ul>
-<li><a href="#org11f299d">1.6.1 Evaluating Inner Lists</a></li>
-</ul>
-</li>
-<li><a href="#org679f8a3">1.7 Variables</a>
-<ul>
-<li><a href="#org259e28f">1.7.1 Error Message for a Symbol Without a Function</a></li>
-<li><a href="#org0bd32d6">1.7.2 Error Message for a Symbol Without a Value</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org448c4b9">4</a>
-<ul>
-<li><a href="#orge168b86">4.2 Simplified beginning-of-buffer Definition</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<p>
-<a id="orgddf9276"></a>
-</p>
-<div id="outline-container-orgfc4dcd8" class="outline-2">
-<h2 id="orgfc4dcd8">1 List Processing</h2>
-<div class="outline-text-2" id="text-orgfc4dcd8">
-</div>
-<div id="outline-container-org8974735" class="outline-3">
-<h3 id="org8974735">1.1 Lisp Lists</h3>
-<div class="outline-text-3" id="text-org8974735">
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">'(this list has '(a list inside of it))
-</pre>
-</div>
-</div>
-
-<div id="outline-container-org4821978" class="outline-4">
-<h4 id="org4821978">1.1.1 Lisp Atoms</h4>
-<div class="outline-text-4" id="text-org4821978">
-<p>
+*** 1.1.1 Lisp Atoms
 Incidentally, the atoms that make up our universe were named such when
 they were thought to be indivisible; but it has been found that
 physical atoms are not indivisible. Parts can split off an atoms or it
@@ -300,16 +17,12 @@ certain kinds of atom, such as an array, can be separated into parts;
 but the mechanism for doing this is different from the mechanism for
 splitting a list. As far as list operations are concerned, the atoms
 of a list are unsplittable.
-</p>
 
-<p>
 As in English, the meanings of the component letters of a Lisp atom
 are different from the meaning the letters make as a word.  For
 example, the word for the South American sloth, the 'ai', is
 completely different from the two words, 'a', and 'i'.
-</p>
 
-<p>
 There are many kinds of atom in nature but only a few in Lisp: for
 example, numbers, such as 37, 511, or 1720, and symbols, such as '+',
 'foo', or 'forward-line'. The words we have listed in the examples
@@ -321,64 +34,40 @@ lists. (Incidentally, the preceding three word parenthetical remark is
 a proper list in Lisp, since it consists of atoms, which in this case
 are symbols, separated by whitespace and enclosed by parentheses,
 without any non-Lisp punctuation.)
-</p>
 
-<p>
-Text between double quotation marks&#x2013;even sentences or paragraphs&#x2013;is
+Text between double quotation marks--even sentences or paragraphs--is
 also an atom. Here is an example:
-</p>
 
-<p>
-'(this list includes "text between quotation marks.")
-</p>
+     '(this list includes "text between quotation marks.")
 
-<p>
 In Lisp, all of the quoted text including the punctuation mark and the
 blank spaces is a single atom. This kind of atom is called a string
 (for "string of characters") and is the sort of thing that is used for
 messages that a computer can print for a human to read. Strings are a
 different kind of atom than numbers or symbols and are used
 differently.
-</p>
-</div>
-</div>
 
-<div id="outline-container-orgd35d8c2" class="outline-4">
-<h4 id="orgd35d8c2">1.1.2 Whitespace in Lists</h4>
-<div class="outline-text-4" id="text-orgd35d8c2">
-<hr />
+*** 1.1.2 Whitespace in Lists
+--------------------------------------------------------------------
 
-<p>
 The amount of whitespace in a list does not matter. From the point of
 view of the Lisp language.
-</p>
 
-<p>
 '(this list
 looks like this)
-</p>
 
-<p>
 is exactly the same as this:
-</p>
 
-<p>
 '(this list looks like this)
-</p>
 
-<p>
 Both examples show what to Lisp is the same list, the list made up of
 the symbols 'this', 'list', 'looks', 'like' in that order.
-</p>
 
-<p>
 Extra whitespace and newlines are designed to make a list more
 readable by humans. When Lisp reads the expression, it gets rid of all
 the extra whitespace (but it needs to have at least one space between
 atoms in order to tell them apart.)
-</p>
 
-<p>
 Odd as it seems, the examples we have seen cover almost all of what
 Lisp lists except that the list may in Lisp looks more or less like
 one of these examples, except that the list may be longer and more
@@ -387,16 +76,10 @@ quotation marks, a symbol looks like a word, and a number looks like a
 number. (For certain situations, square brackets, dots and a few other
 special characters may be used; however, we will go quite far without
 them.)
-</p>
-</div>
-</div>
 
-<div id="outline-container-org34ef18a" class="outline-4">
-<h4 id="org34ef18a">1.1.3 GNU Emacs Helps You Type Lists</h4>
-<div class="outline-text-4" id="text-org34ef18a">
-<hr />
+*** 1.1.3 GNU Emacs Helps You Type Lists
+---------------------------------------------------------------------
 
-<p>
 When you type a Lisp expression in GNU Emacs using either Lisp
 Interaction mode or Emacs Lisp mode, you have available to you several
 commands to format the Lisp expression so it is easy to read. For
@@ -404,104 +87,69 @@ example, pressing the TAB key automatically indents the line the
 cursor is on by the right amount. A command to properly indent the
 code in a region is customarily bound to M-C-\. Indentation is
 designed so that you can see which elements of a list belong to which
-list&#x2013;elements of a sub-list are indented more than the elements of
+list--elements of a sub-list are indented more than the elements of
 the enclosing list.
-</p>
 
-<p>
 In addition, when you type a closing parenthesis, Emacs momentarily
 jumps the cursor back to the matching opening parenthesis, so you can
 see which one it is. This is very useful, since every list you type in
 Lisp must have its closing parenthesis match its opening
-parenthesis. (See Section "Major Modes" in <i>The GNU Emacs Manual</i>, for
+parenthesis. (See Section "Major Modes" in /The GNU Emacs Manual/, for
 more information about Emacs's modes.)
-</p>
-</div>
-</div>
-</div>
 
-<div id="outline-container-orgce83b62" class="outline-3">
-<h3 id="orgce83b62">1.2 Run a Program</h3>
-<div class="outline-text-3" id="text-orgce83b62">
-<hr />
-<p>
-A list in Lisp&#x2013;any list&#x2013;is a program ready to run. If you run it
-(for which the Lisp jargon is <i>evaluate</i>), the computer will do one of
+** 1.2 Run a Program
+---------------------------------------------------------------------
+A list in Lisp--any list--is a program ready to run. If you run it
+(for which the Lisp jargon is /evaluate/), the computer will do one of
 three things: 
-</p>
-<ul class="org-ul">
-<li>do nothing except return to you the list itself;</li>
-<li>send you an error message;</li>
-<li>or, threat the first symbol in the list as a command to do
-something.</li>
-</ul>
-<p>
+- do nothing except return to you the list itself;
+- send you an error message;
+- or, threat the first symbol in the list as a command to do
+  something. 
 (Usually, of course, it is the last of these three things that you
 really want!)
-</p>
 
-<p>
 The single apostrophe, ', that I put in front of some of the example
 lists in preceding sections is called a quote; when it precedes a
 list, ait tells Lisp to do nothing with the list, other than take it
 as it is written. But if there is no quote preceding a list, the first
 item of the list is special: it is a command for the computer to
-obey. (In Lisp, these commands are called <i>functions</i>.) The list (+
+obey. (In Lisp, these commands are called /functions/.) The list (+
 2 2) shown above did not have a quote in front of it, so Lisp
 understands that the + is an instruction to do something with the rest
 of the list: add the numbers that follow.
-</p>
 
-<p>
 If you are reading this inside of GNU Emacs in Info, here is how you
 can evaluate such a list: place your cursor immediately after the right
-hand parenthesis of the following list and then type <i>C-x C-e:</i>
-</p>
+hand parenthesis of the following list and then type /C-x C-e:/
 
-<p>
-(+ 2 2)
-</p>
+:    (+ 2 2)
 
-<p>
-You will see the number 4 appear in the echo area<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. (What you have
+You will see the number 4 appear in the echo area[fn:1]. (What you have
 just done is evaluate the list. The echo area is the line at the
 bottom of the screen that displays or echoes text.) Now try the same
 thing with a quoted list: place the cursor right after the following
-list and type <i>C-x C-e</i>:
-</p>
+list and type /C-x C-e/:
 
-<p>
-'(this is a quoted list)
-</p>
+:    '(this is a quoted list)
 
-<p>
 You will see (this is a quoted list) appear in the echo area.
-</p>
 
-<p>
 In both cases, what you are doing is giving a command to the program
-inside of GNU Emacs called the <i>Lisp interpreter</i>&#x2013;giving the
+inside of GNU Emacs called the /Lisp interpreter/--giving the
 interpreter a command to evaluate the expression. The name of the Lisp
 interpreter comes from the word for the task done by a human who comes
-up with the meaning of an expression&#x2013;who interprets it.
-</p>
+up with the meaning of an expression--who interprets it.
 
-<p>
-You can also evaluate an atom that is not part of a list&#x2013;one that is
+You can also evaluate an atom that is not part of a list--one that is
 not surrounded by parentheses; again, the Lisp interpreter translates
 from the humanly readable expression to the language of the
 computer. But before discussing this (see Section 1.7 "Variables",
 page 9), we will discuss what the Lisp interpreter does when you make
 an error.
-</p>
-</div>
-</div>
 
-<div id="outline-container-orgc65b2c2" class="outline-3">
-<h3 id="orgc65b2c2">1.3 Generate an Error Message</h3>
-<div class="outline-text-3" id="text-orgc65b2c2">
-<hr />
-<p>
+** 1.3 Generate an Error Message
+---------------------------------------------------------------------
 Partly so you won't worry if you do it accidentally, we will now give a command to
 the Lisp interpreter that generates an error message. This is a harmless activity;
 and indeed, we will often try to generate error messages intentionally. Once you
@@ -509,133 +157,86 @@ understand the jargon, error messages can be informative. Instead of being calle
 "error" messages, they should be called "help" messages. They are like signposts to
 a traveler in a strange country; deciphering them can be hard, but once understood,
 they can point the way.
-</p>
 
-<p>
    The error message is generated by a build-in GNU Emacs debugger. We will enter
 the debugger. You get out of the debugger by typing q.
-</p>
 
-<p>
    What we will do is evaluate a list that is not quoted and does not have a
 meaningful command as its first element. Here is a list almost exactly the same as
 the one we just used, but without the single-quote in front of it. Position the
 cursor right after it and type C-x C-e:
-</p>
+    
+    (this is an unquoted list)
 
-<p>
-(this is an unquoted list)
-</p>
-
-<p>
-    A <b>Backtrace</b> window will open up and you should see the following in it:
+    A *Backtrace* window will open up and you should see the following in it:
 Your cursor will be in this window (you may have to wait a few seconds before it
 becomes visible). To quit the debugger and make the debugger window go away, type:
-</p>
 
-<p>
-<i>q</i>
-</p>
+    /q/
 
-<p>
-Please type <i>q</i> right now, so you become confident that you can get out of the
+Please type /q/ right now, so you become confident that you can get out of the
 debugger. Then, type /C-x C-e again to re-enter it.
-</p>
 
-<p>
-Based on what already know, we can almost read this error message.
-</p>
+   Based on what already know, we can almost read this error message.
 
-<p>
    You read the \*Backtrace\* buffer from the bottom up; it tells you what Emacs
-did. When you typed <i>C-x C-e</i>, you made an interactive call to the command
-<b>eval-last-sexp</b>. <b>eval</b> is an abbreviation for "evaluate" and <b>sexp</b> is an
+did. When you typed /C-x C-e/, you made an interactive call to the command
+*eval-last-sexp*. *eval* is an abbreviation for "evaluate" and *sexp* is an
 abbreviation for "symbolic expression". The command means "evaluate last symbolic
 expression", which is the expression just before your cursor.
-</p>
 
-<p>
    Each line above tells you what the Lisp interpreter evaluated next. The most
-recent action is at the top. The buffer is called the <b>Backtrace</b> buffer because it
+recent action is at the top. The buffer is called the *Backtrace* buffer because it
 enables you to track Emacs backwards.
-</p>
 
-<p>
-At the top of the <b><b>Backtrace</b></b> buffer, you see the line:
-</p>
+   At the top of the **Backtrace** buffer, you see the line:
 
-<p>
-*Debugger entered&#x2013;Lisp error: (void-function this)
-</p>
+   *Debugger entered--Lisp error: (void-function this)
 
-<p>
 The Lisp interpreter tried to evaluate the first atom of the list, the word
 'this'. It is this action that generated the error message 'void-function this'.
 The message contains the words 'void-function' and 'this'.  
-</p>
 
-<p>
    The word 'function' was mentioned once before. It is a very important word. For
-our purposes, we can define it by saying that a <i>function</i> is a set of instructions
+our purposes, we can define it by saying that a /function/ is a set of instructions
 to the computer that tell the computer to do something.
-</p>
 
-<p>
    Now we can begin to understand the error message: 'void-function this;. The
 function (that is, the word 'this') does not have a definition of any set of
 instructions for the computer to carry out.
-</p>
 
-<p>
    The slightly odd word, 'void-function', is designed to cover the way Emacs Lisp
 is implemented, which is that when a symbol does not have a function definition
 attached to it, the place that should contain the instructions is void.
-</p>
 
-<p>
    On the other hand, since we were able to add 2 plus 2 successfully, by
 evaluating (+ 2 2), we can infer that the symbol + must have a set of instructions
 for the computer to obey and those instructions must be to add the numbers that
 follow the +.
-</p>
 
-<p>
    It is possible to prevent Emacs entering the debugger in cases like this. We do
 not explain how to do that here, but we will mention what the result looks like,
 because you may encounter a similar situation if there is a bug in some Emacs code
 that you are using. In such cases, you will see only one line of error message; it
 will appear in the echo area and look like this:
-</p>
+  
+   Symbols's function definition is void: this
 
-<p>
-Symbols's function definition is void: this
-</p>
-
-<p>
 The message goes away as soon as you type a key, even just to move the cursor.
-</p>
 
-<p>
    We know the meaning of the word 'Symbol'. It refers to the first atom of the list,
 the word 'this'. The word 'function' refers to the instructions that tell the
 computer what to do. (Technically, the symbol tells the computer where to find the
 instructions, but this is a complication we can ignore for the moment.)
-</p>
 
-<p>
    The error message can be understood: 'Symbol's function definition is void::
 this'. The symbol (that is, the word 'this') lacks instructions for the computer to
 carry out.
-</p>
-</div>
-</div>
 
-<div id="outline-container-org45aa5d0" class="outline-3">
-<h3 id="org45aa5d0">1.4 Symbol Names and Functions Definitions</h3>
-<div class="outline-text-3" id="text-org45aa5d0">
-<p>
+** 1.4 Symbol Names and Functions Definitions    
+
 We can articulate another characteristic of Lisp based on what we have
-discussed so far&#x2013;an important characteristic: symbol, like +, is not
+discussed so far--an important characteristic: symbol, like +, is not
 itself the set of instructions for the computer to carry out. Instead,
 the symbol is used, perhaps temporarily, as a way of locating the
 definition or set of instructions. What we see is the name through
@@ -644,39 +245,28 @@ way. I can be referred to as 'Bob'; however, I am not the letters 'b',
 'o', 'b' but am, or was the consciousness  consistently associated with
 a particular life-form. The name is not me, but it can be used to
 refer to me.
-</p>
 
-<p>
 In Lisp, one set of instructions can be attached to several names. For
 example, the computer instructions for adding numbers can be linked to
 the symbol plus as well as to the symbol + (and are in some dialects
 of Lisp). Among humans, I can be referred to as 'Robert' as well as
 'Bob' and by other words as well.
-</p>
 
-<p>
 On the other hand, a symbol can have only one function definition
 attached to it at a time. Other wise, the computer would be confused
 as to which definition to use. If this were the case among people,
 only one person in the world could be named 'Bob'. However,
 the function definition to which the name refers can be changed
-readily<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>. (See Section 3.2 "Install a Function Definition", page 28.)
-</p>
+readily[fn:2]. (See Section 3.2 "Install a Function Definition", page 28.)
 
-<p>
-Since Emacs Lisp is large, it is customary<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> to name symbols in a
-way that identifies<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> the part of Emacs to which the function
+Since Emacs Lisp is large, it is customary[fn:3] to name symbols in a
+way that identifies[fn:4] the part of Emacs to which the function
 belongs. Thus, all the names for functions that deal with Texinfo
 start with 'texinfo-' and those for functions that deal with reading
 mail start with 'rmail-'.
-</p>
-</div>
-</div>
 
-<div id="outline-container-org1143271" class="outline-3">
-<h3 id="org1143271">1.5 The Lisp Interpreter<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></h3>
-<div class="outline-text-3" id="text-org1143271">
-<p>
+** 1.5 The Lisp Interpreter[fn:5]
+
 Based on what we have seen, we can now start to figure out what the
 Lisp interpreter does when we command it to evaluate a list. First, it
 looks to see whether there is a quote before the list; if there is,
@@ -685,55 +275,41 @@ no quote, the interpreter looks at the first element in the list and
 sees whether it has a function definition. If it does, the interpreter
 carries out the instructions in the function definition. Otherwise,
 the interpreter prints an error message.
-</p>
 
-<ul class="org-ul">
-<li>quote if T return list, F to 2 (T: with a quote, F: without a quote)</li>
-<li>looks at the first element whether a function definition(T:carries
-out the instructions, F: prints an error message)</li>
-</ul>
+- quote if T return list, F to 2 (T: with a quote, F: without a quote)
+- looks at the first element whether a function definition(T:carries
+  out the instructions, F: prints an error message)
 
-<p>
 This is how Lisp works. Simple. There are added complications
 which we will get to in a minute, but these are the fundamentals. Of
 course, to write Lisp programs, you need to know how to write function
 definitions and attach them to names, and how to do this without
 confusing either yourself or the computer.
-</p>
 
-<p>
 Now, for the first complication. In addition to lists, the Lisp
 interpreter can evaluate a symbol that is not quoted and does not have
 parentheses around it. The Lisp interpreter will attempt to determine
 the symbol's value as a variable. This situation is described in the
 section on variables. (See Section 1.7 "Variables", page 9.)
-</p>
 
-<p>
 The second complication occurs because some functions are unusual and
 do not work in the usual manner. Those that don't are called special
 forms. They are used for special jobs, like defining a function, and
 there are not many of them. In the next few chapters, you will be
 introduced to several of the more important special forms.
-</p>
 
-<p>
 As well as special forms, there are also macros. A macro is a
 construct defined in Lisp, which differs from a function in that it
 translate a Lisp expression into another expression that is to be
 evaluated in place of the original expression. (See Section 8.2.2
 "Lisp macro", page 85.)
-</p>
 
-<p>
 For the purpose of this introduction, you do not need to worry too
 much about whether something is a special form, macro, or ordinary
 function. For example, if is a special form (see Section 3.7 "if",
 page 35), but when is a macro (see Section 3.1 "defun", page 26). It
 still behaves in the same way.
-</p>
 
-<p>
 The final complication is this: if the function that the Lisp
 interpreter looks to see whether the list has a list inside it. If
 there is an inner list, the Lisp interpreter first figures out what it
@@ -743,58 +319,39 @@ works on that one first and so on. It always works on the innermost
 list first. The interpreter works on the innermost list first, to
 evaluate the result of that list. The result may be used by the
 enclosing expression.
-</p>
 
-<p>
 Otherwise, the interpreter works left to right, from one expression to
 the next.
-</p>
-</div>
 
-<div id="outline-container-orgfdded78" class="outline-4">
-<h4 id="orgfdded78">1.5.1 Byte Compiling</h4>
-<div class="outline-text-4" id="text-orgfdded78">
-<hr />
-<p>
+*** 1.5.1 Byte Compiling
+-------------------------------------------------------------------------------
 One other aspect of interpreting: the Lisp interpreter is able to
 interpret two kinds of entity: humanly readable code, on which we will
 focus exclusively, and specially processed code, called byte compiled
 code, which is not humanly readable. Byte compiled code runs faster
 than humanly readable code.
-</p>
 
-<p>
 You can transform humanly readable code into byte compiled code by
 running one of the compile commands such as byte-compile-file. Byte
 compiled code is usually stored in a file that ends with a .elc
 extension rather than a el extension. You will see both kinds of file
 in the emacs/lisp directory; the files to read are those with .el
 extensions. 
-</p>
 
-<p>
 As a practical matter, for most things you might do to customize or
 extend Emacs, you do not need to byte compile; and I will not discuss
 the topic here. See Section "Byte Compilation" in The GNU Emacs Lisp
 Reference Manual, for a full description of byte compilation.
-</p>
-</div>
-</div>
-</div>
 
-<div id="outline-container-orga3c796f" class="outline-3">
-<h3 id="orga3c796f">1.6 Evaluation</h3>
-<div class="outline-text-3" id="text-orga3c796f">
-<p>
+** 1.6 Evaluation
+
 When the Lisp interpreter works on an expression, the term for the
 activity is called evaluation. We say that the interpreter "evaluates
 the expression". I've used this term several times before. The word
 comes from its use in everyday language, "to ascertain the value or
 amount of; to appraise", according to Webster's New Collegiate
 Dictionary. 
-</p>
 
-<p>
 After evaluating an expression, the Lisp interpreter will most likely
 return the value that the computer produces by carrying out the
 instructions it found in the function definition, or perhaps it will
@@ -804,211 +361,140 @@ function or it may attempt to repeat continually what it is doing for
 ever and ever in an infinite loop. These actions are less common; and
 we can ignore them.) Most frequently, the interpreter returns a
 value. 
-</p>
 
-<p>
 At the same time the interpreter returns a value, it may do something
 else as well, such as move a cursor or copy a file; this other kind of
 action is called a side effect. Actions that we humans think are
 important, such as printing results, are often side effects to the
 Lisp interpreter. It is fairly easy to learn to use side effects. 
-</p>
 
-<p>
 In summary, evaluating a symbolic expression most commonly causes the
 Lisp interpreter to return a value and perhaps carry out a side
 effect; or else produce an error.
-</p>
-</div>
 
-<div id="outline-container-org11f299d" class="outline-4">
-<h4 id="org11f299d">1.6.1 Evaluating Inner Lists</h4>
-<div class="outline-text-4" id="text-org11f299d">
-<p>
+*** 1.6.1 Evaluating Inner Lists
+
 If evaluation applies to a list that is inside another list, the outer
 list may use the value returned by the first evaluation as information
 when the outer list is evaluated. This explains why inner expressions
 are evaluated first: the values they return are used by the outer
 expressions. 
-</p>
 
-<p>
 We can investigate this process by evaluating another addition
-example. Place your cursor after the following expression and type <i>C-x
-C-e</i>: 
-</p>
+example. Place your cursor after the following expression and type /C-x
+C-e/: 
 
-<p>
-(+ 2 (+ 3 3))
-</p>
+    (+ 2 (+ 3 3))
 
-<p>
 The number 8 will appear in the echo area.
-</p>
 
-<p>
 What happens is that the Lisp interpreter first evaluates the inner
 expression, (+ 3 3), for which the value 6 is returned; then it
 evaluates the outer expression as if it were written (+ 2 6), which
 returns the value 8. Since there are no more enclosing expressions to
 evaluate, the interpreter prints that value in the echo area.
-</p>
 
-<p>
 Now it is easy to understand the name of the command invoked by the
-keystrokes <i>C-x C-e</i>: the name is eval-last-sexp. The letters sexp are
+keystrokes /C-x C-e/: the name is eval-last-sexp. The letters sexp are
 an abbreviation for "symbolic expression", and eval is an abbreviation
 for "evaluate". The command evaluates the last symbolic expression.
-</p>
 
-<p>
 As an experiment, you can try evaluating the expression by putting the
 cursor at the beginning of the next line immediately following the
 expression, or inside the expression.
-</p>
 
-<p>
 Here is another copy of the expression:
-</p>
 
-<p>
-(+ 2 (+ 3 3))
-</p>
+    (+ 2 (+ 3 3))
 
-<p>
 If you place the cursor at the beginning of the blank line that
-immediately follows the expression and type <i>C-x C-e</i>, you will still
+immediately follows the expression and type /C-x C-e/, you will still
 get the value 8 printed in the echo area. Now try putting the cursor
 inside the expression. If you put it right after the next to last
 parenthesis (so it appears to sit on top of the last parenthesis), you
 will get a 6 printed in the echo area! This is because the command
 evaluates the expression (+ 3 3). 
-</p>
 
-<p>
-Now put the cursor immediately after a number. Type <i>C-x C-e</i> and you
+Now put the cursor immediately after a number. Type /C-x C-e/ and you
 will get the number itself. In Lisp, if you evaluate a number, you get
-the number itself&#x2013;this is how number differ from symbols. If you
+the number itself--this is how number differ from symbols. If you
 evaluate a list starting with a symbol like +, you will get a value
 returned that is the result of the computer carrying out the
 instructions in the function definition attached to that name. If a
 symbol by itself is evaluated, something different happens, as we will
 see in the next section.
-</p>
-</div>
-</div>
-</div>
 
-<div id="outline-container-org679f8a3" class="outline-3">
-<h3 id="org679f8a3">1.7 Variables</h3>
-<div class="outline-text-3" id="text-org679f8a3">
-<p>
+** 1.7 Variables
+
 In Emacs Lisp, a symbol can have a value attached to it just as it can have a
 function definition attached to it. The two are different. The function definition
 is a set of instructions that a computer will obey. A value, on the other hand, is
 something, such as number or a name, that can vary (which is why such a symbol is
 called a variable). The value of a symbol can be any expression in Lisp, such as a
 symbol, number, list, or string. A symbol that has a value is often called a
-<i>variable</i>.
-</p>
+/variable/.
 
-<p>
 A symbol can have both a function definition and a value attached to it at the same
 time. Or it can have just one or the other. The two are separate. This is somewhat
 similar to the way the name Cambridge can refer to the city in Massachusetts and
 have some information attached to the name as well, such as "great programming
 center".
-</p>
 
-<p>
 Another way to think about this is to imagine a symbol as being a chest of
 drawers. The function definition is put in one drawer, the value in another, and so
 on. What is put in the drawer holding the value can be changed without affecting the
 contents of the drawer holding the function definition, and vice versa. 
-</p>
 
-<p>
 The variable fill-column illustrates a symbol with a value attached to it: in every
 GNU Emacs buffer, this symbol is set to some value, usually 72 or 70, but sometimes
 to some other value. To find the value of this symbol, evaluate it by itself. If you
 are reading this in Info inside of GNU Emacs, you can do this by putting the cursor
-after the symbol and typing <i>C-x C-e</i>:
-</p>
+after the symbol and typing /C-x C-e/:
 
-<p>
-fill-column
-</p>
+    fill-column
 
-<p>
-After I typed <i>C-x C-e</i>, Emacs printed the number 72 in my echo area. This is the
+After I typed /C-x C-e/, Emacs printed the number 72 in my echo area. This is the
 value for which fill-column is set for me as I write this. It may be different for
 you in your Info buffer. Notice that the value returned as a variable is printed in
 exactly the same way as the value returned by a function carrying out its
 instructions. From the point of view of the Lisp interpreter, a value returned is a
 value returned. What kind of expression it came from ceases to matter once the value
 is known.
-</p>
 
-<p>
 A symbol can have any value attached to it or, to use the jargon, we can bind the
 variable to a value: to a number, such as 72; to a string, "such as this"; to a list,
 such as (spruce pine oak); we can even bind a variable to a function definition.
-</p>
 
-<p>
 A symbol can be bound to a value in several ways. See Section 1.0 "Setting the Value
 of a Variable", page 16, for information about one way to do this.
-</p>
-</div>
 
-<div id="outline-container-org259e28f" class="outline-4">
-<h4 id="org259e28f">1.7.1 Error Message for a Symbol Without a Function</h4>
-<div class="outline-text-4" id="text-org259e28f">
-<p>
+*** 1.7.1 Error Message for a Symbol Without a Function
+
 When we evaluated fill-column to find its value as a variable, we did not place
 parentheses around the word. This is because we did not intend to use it as a
 function name.
-</p>
 
-<p>
 If fill-column were the first or only element of a list, the Lisp interpreter would
 attempt to find the function definition attached to it. But fill-column has no
 function definition. Try evaluating this:
-</p>
 
-<p>
-(fill-column)
-</p>
+    (fill-column)
 
-<p>
-You will create a <b>Backtrace</b> buffer that says:
-</p>
-</div>
-</div>
+You will create a *Backtrace* buffer that says:
 
-<div id="outline-container-org0bd32d6" class="outline-4">
-<h4 id="org0bd32d6">1.7.2 Error Message for a Symbol Without a Value</h4>
-<div class="outline-text-4" id="text-org0bd32d6">
-<p>
+*** 1.7.2 Error Message for a Symbol Without a Value
+
 If you attempt to evaluate a symbol that does not have a value bound to it, you will
 receive an error message. You can see this by experimenting with our 2 plus 2
 addition. In the following expression, put your cursor right after the +, before the
 first number 2, type C-x C-e:
-</p>
 
-<p>
-(+ 2 2)
-</p>
+    (+ 2 2)
 
-<p>
 (that is not this)
-</p>
 
-<p>
 (substring "The quick brown fox jumped.")
-</p>
 
-<p>
 (message "The name of this buffer is: %s." (buffer-name))
 (message (buffer-name))
 (message "The value of fill-column is %d." fill-column)
@@ -1024,9 +510,7 @@ herbivores
 (setq counter 0)
 (setq counter (+ counter 1))
 counter
-</p>
 
-<p>
 (setq counter 0)
 (setq counter (+ counter 2))
 counter
@@ -1039,9 +523,7 @@ counter
 (other-window)
 (buffer-size)
 (point)
-</p>
 
-<p>
 (defun multiply-by-seven (number)
    "Multiply NUMBER by seven."
    (interactive "p")
@@ -1062,97 +544,90 @@ counter
 (if 'false
    'true
    'false)
-(&gt; 5 4)
-(&gt; 4 5)
-</p>
+(> 5 4)
+(> 4 5)
 
-<p>
 (if t
    'true
    'false)
-</p>
-</div>
-</div>
-</div>
-</div>
 
-<div id="outline-container-org448c4b9" class="outline-2">
-<h2 id="org448c4b9">4</h2>
-<div class="outline-text-2" id="text-org448c4b9">
-</div>
-<div id="outline-container-orge168b86" class="outline-3">
-<h3 id="orge168b86">4.2 Simplified beginning-of-buffer Definition</h3>
-<div class="outline-text-3" id="text-orge168b86">
-<p>
+* 4
+** 4.2 Simplified beginning-of-buffer Definition
 The beginning-of-buffer command is a good function to start with since you are
 likely to be familiar with it and it is easy to understand. Used as an
 interactive command, beginning-of-buffer moves the cursor to the beginning of
 the buffer, leaving the mark at the previous position. It is generally bound to
-M-&lt;. 
-</p>
+M-<. 
 
-<p>
 In this section, we will discuss a shortened version of the function that shows
 how it is most frequently used. This shortened function works as writter, but it
 does not contain the code for a complex option. In another section, we will
 describe the entire function.
-</p>
 
-<p>
 Before looking at the code, let's consider what the function definition has to
 contain: it must include an expression that makes the function interactive so it
-can be called by typing <i>M-x beginning-of-buffer</i> or by typing a keychord such
-as <i>M-&lt;</i>; it must include code to leave a mark at the original position in the
+can be called by typing /M-x beginning-of-buffer/ or by typing a keychord such
+as /M-</; it must include code to leave a mark at the original position in the
 buffer; and it must include code to move the cursor to the beginning of the
 buffer.
-</p>
 
-<p>
 Here is the complete text of the shortened version of the function:
-</p>
 
-<div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">simplified-beginning-of-buffer</span> ()
-  <span style="color: #8b2252;">"Move point to the beginning of the buffer;</span>
-<span style="color: #8b2252;">leave mark at previous position."</span>
-  (<span style="color: #a020f0;">interactive</span>)
+#+BEGIN_SRC emacs-lisp
+(defun simplified-beginning-of-buffer ()
+  "Move point to the beginning of the buffer;
+leave mark at previous position."
+  (interactive)
   (push-mark)
   (goto-char (point-min)))
-</pre>
-</div>
+#+END_SRC
 
+Like all function definitions, this definition has five parts following the macro
+defun: 
 
+1. The name: in this example, *simplified-beginning-of-buffer*.
+2. A list of the arguments: in this example, an empty list, (),
+3. The documentation string.
+4. The interactive expression.
+5. The body.
 
-<p>
-<a href="#orgddf9276">内部链接</a>
-</p>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
+In this function definition, the argument list is empty; this means that this
+function does not require any arguments. (When we look at the definition for the
+complete function, we will see that it may be passed an optional argument.)
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-Emacs shows integer values in decimal, in octal and in hex, and
+The interactive expression tells Emacs that the function is intended to be used
+interactively. In this example, *interactive* does not have an argument because
+*simplified-beginning-of-buffer* does not require one.
+
+The body of the function consist of the two lines:
+
+: (push-mark)
+: (goto-char (point-min))
+
+The first of these lines is the expression, *(push-mark)*. When this expression is
+evaluated by the Lisp interpreter, it set a mark at the current position of the
+cursor, wherever that may be. The position of this mark is saved in the mark ring. 
+
+The next line is *(goto-char (point-min)). This expression jumps the cursor to the
+minimum point in the buffer, that is, to the beginning of the buffer (or to the
+beginning of the accessible portion of the buffer if it is narrowed. See Chapter 6
+"Narrowing and Widening", page 67.)
+
+The *push-mark* command sets a mark at the place where the cursor was located before
+it was moved to the beginning of the buffer by the (goto-char (point-min))
+expression. Consequently, you can, if you wish, go back to where you were originally
+by typing /C-x C-x./
+
+That is all there is to the function definition!
+
+[[my-anchor][内部链接]]
+
+* Footnotes
+[fn:1] Emacs shows integer values in decimal, in octal and in hex, and
 also as acharacter, but let's ignore this convenience feature for now.
-</p></div></div>
-
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"></div></div>
-
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"></div></div>
-
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"></div></div>
-
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"></div></div>
-
-
-</div>
-</div></div>
-<div id="postamble" class="status">
-<p class="author">Author: mac</p>
-<p class="date">Created: 2020-08-30 Sun 14:18</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
-</body>
-</html>
+[fn:2]
+[fn:3]
+[fn:4]
+[fn:5]
+[fn:6]
+: waef

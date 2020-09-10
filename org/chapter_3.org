@@ -109,7 +109,6 @@ Three parts of let expression
 #+end_src
 >> "Here are 3 variables with nil, nil, and some value."
 
-
 ** 3.7 The if Special Form
 #+begin_src lisp
   (if true-or-false-test
