@@ -1,0 +1,55 @@
+#+options: num:nil toc:nil author:nil creator:nil email:nil timestamp:nil
+* 1
+** 1.11 Exercises
+*** E1
+: test; (run C-x C-e)
+: >> Symbols's value as variable is void: test
+*** E2
+: (test); (run C-x C-e)
+: >> Symbols's function definition is void: test
+*** E3
+: (setq counter 0)
+: (setq counter (+ 2 counter))
+*** E4
+: (message "this is n message (%s)" "message inside it")
+*** E5
+* 2 Practicing Evaluation
+#+begin_quote
+/How Emacs works?/
+#+end_quote
+*keyword * 2:*
+- evaluating 
+- an expression
+
+- interactive functions
+
+** Buffer Names
+
+- buffer-name
+- buffer-file-name
+
+C-x C-e
+(buffer-name)
+>> note_20200907.org
+(setq a (buffer-file-name))
+
+>> <full path>
+
+*** buffer vs file
+
+** 2.2 Getting Buffers
+
+(buffer-name)"note_20200907.org"
+(buffer-file-name)"/Users/mac/emacs_lisp/note_20200907.org"
+
+(current-buffer)#<buffer note_20200907.org>
+(other-buffer)
+
+** 2.3 Switching Buffers
+
+(switch-to-buffer)
+
+
+(defun multiply-by-seven (number
+
+

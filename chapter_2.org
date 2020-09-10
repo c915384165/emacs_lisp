@@ -1,0 +1,39 @@
+* 2 Practicing Evaluation
+** 2.1 Buffer Names
+
+#+begin_src lisp
+  (buffer-name)
+  (buffer-file-name)
+#+end_src
+
+** 2.2 Getting Buffers
+
+#+begin_src lisp
+  (current-buffer)
+  (other-buffer)
+#+end_src
+
+**  2.3 Switching Buffers
+
+#+begin_src lisp
+  (switch-to-buffer)
+  (switch-to-buffer (other-buffer)) ;; switch to the previous buffer
+  (switch-to-buffer (other-buffer (current-buffer) t))
+#+end_src
+
+** 2.4 Buffer Size and the Location of Point
+
+#+begin_src lisp
+  (buffer-size)
+  (point)
+  (point-min)
+  (point-max)
+#+end_src
+
+** 2.5 Exercise
+
+#+begin_src lisp
+  (buffer-file-name)
+  (buffer-size)
+  (point)
+#+end_src
