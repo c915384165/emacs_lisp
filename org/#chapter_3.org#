@@ -713,6 +713,86 @@ a let expression. It looks like this:
     (save-excursion
       body..))
 #+end_src
+** 3.11 Review
+In the last few chapters we have introduced a macro and a fair number of
+functions and special forms. Here they are described in brief, along with a few
+similar functions that have not been mentioned yet.
+--------------------------------------------------------------------------------
+eval-last-sexp
+
+Evaluate the last symbolic expression before the current location of point. The
+value is printed in the echo area unless the function is invoked with an
+argument; in that case, the output is printed in the current buffer. This
+command is normally bound to C-x C-e
+
+Evaluate the last symbolic expression before the current location of point. The
+value is printed in the echo area unless the function is invoked with an
+argument; in that case, the output is printed in the current buffer. This
+command is normally bound to C-x C-e
+--------------------------------------------------------------------------------
+defun
+
+Define function. Define function. Define function Define function.
+This macro has up to five parts:
+This macro has up to five parts:
+This macro has up to five parts:
+This macro has up to five parts:
+This macro has up to five parts:
+
+the name, a template for the arguments that will be passed to the function,
+the name, a template for the arguments that will be passed to the function,
+the name, a template for the arguments that will be passed to the function,
+the name, a template for the arguments that will be passed to the function,
+the name, a template for the arguments that will be passed to the function,
+
+documentation, documentation, documentation, documentation, documentation,
+an optional interactive declaration,
+an optional interactive declaration,
+an optional interactive declaration,
+an optional interactive declaration,
+an optional interactive declaration,
+and the body of the definition.
+and the body of the definition.
+and the body of the definition.
+and the body of the definition.
+and the body of the definition.
+
+For example, For example, For example, For example, For example,
+in Emacs the function definition of dired-unmark-all-marks is as follows. 
+in Emacs the function definition of dired-unmark-all-marks is as follows.
+#+begin_src lisp
+  (defun dired-unmark-all-marks ()
+    "Remove all marks from all files in the Dired buffer."
+    (interactive)
+    (dired-unmark-all-files ?\r))
+#+end_src
+--------------------------------------------------------------------------------
+interactive
+
+Declare to the interpreter that function can be used interactively.
+Declare to the interpreter that function can be used interactively.
+Declare to the interpreter that function can be used interactively.
+Declare to the interpreter that function can be used interactively.
+Declare to the interpreter that function can be used interactively.
+
+This special form may be followed by a string with one or more parts
+This special form may be followed by a string with one or more parts
+This special form may be followed by a string with one or more parts
+This special form may be followed by a string with one or more parts
+This special form may be followed by a string with one or more parts
+that pass the information to the arguments of the function,
+that pass the information to the arguments of the function,
+that pass the information to the arguments of the function,
+that pass the information to the arguments of the function,
+in sequence.
+in sequence.
+in sequence.
+in sequence.
+in sequence.
+
+These parts may also tell the interpreter to prompt for information.
+These parts may also tell the interpreter to prompt for information.
+These parts may also tell the interpreter to prompt 
 ** 3.12 Exercises
 #+begin_src lisp
   ;; 3.12 Exercises
