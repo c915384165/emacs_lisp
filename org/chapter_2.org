@@ -13,7 +13,7 @@
   (other-buffer)
 #+end_src
 
-**  2.3 Switching Buffers
+** 2.3 Switching Buffers
 
 #+begin_src lisp
   (switch-to-buffer)

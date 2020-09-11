@@ -1,15 +1,525 @@
 #+options: num:nil
-* 1
+* 1 List Processing
 ** 1.1 Lisp Lists
+*** 1.1.0 Introduction
+In Lisp, a list looks like this:
 
 #+begin_src lisp
-  (defun foo ()
-    (interactive)
-    (message "foo about"))
-  (foo)
+'(rose violet daisy buttercup)
+'(rose
+  violet
+  daisy
+  buttercup)
+(+ 2 2)
+'(this list has (a list inside of it))
 #+end_src
 
+*** 1.1.1 Lisp Atoms
 
+- separated by whitespace
+- () an empty list: both an atom and a list
+- most time (except array) are unsplittable
+
+atoms:
+- numbers: 37, 511, or 1729,...
+- symbols: +, -, *, /, forward-line...
+- strings: "this is a "
+- STRINGS:
+
+*** 1.1.3 Indenting region
+
+M-C-\
+
+quote '
+C-x C-e: eval-last-sexp
+C-u C-x C-e: result of eval-last-sexp
 #+begin_src lisp
-  (+ 2 2);; sum of 4
+(+ 2 2)
+
+(quote (this is a quoted list))
+'(this is a quoted list)
 #+end_src
+
+** 1.3 Generate an Error Message
+#+begin_src lisp
+  (+ 2 2)
+#+end_src
+
+#+BEGIN_SRC emacs-lisp
+'(this list has '(a list inside of it))
+#+END_SRC
+
+*** 1.1.1 Lisp Atoms
+Incidentally, the atoms that make up our universe were named such when
+they were thought to be indivisible; but it has been found that
+physical atoms are not indivisible. Parts can split off an atoms or it
+can fission into two parts of roughly equal size. Physical atoms were
+named prematurely, before their truer nature was found. In Lisp,
+certain kinds of atom, such as an array, can be separated into parts;
+but the mechanism for doing this is different from the mechanism for
+splitting a list. As far as list operations are concerned, the atoms
+of a list are unsplittable.
+
+As in English, the meanings of the component letters of a Lisp atom
+are different from the meaning the letters make as a word.  For
+example, the word for the South American sloth, the 'ai', is
+completely different from the two words, 'a', and 'i'.
+
+There are many kinds of atom in nature but only a few in Lisp: for
+example, numbers, such as 37, 511, or 1720, and symbols, such as '+',
+'foo', or 'forward-line'. The words we have listed in the examples
+above are all symbols. In everyday Lisp conversation, the word "atom"
+is not often used, because programmers usually try to be more specific
+about what kind of atom they are dealing with. Lisp programming is
+mostly about symbols (and sometimes numbers) within
+lists. (Incidentally, the preceding three word parenthetical remark is
+a proper list in Lisp, since it consists of atoms, which in this case
+are symbols, separated by whitespace and enclosed by parentheses,
+without any non-Lisp punctuation.)
+
+Text between double quotation marks--even sentences or paragraphs--is
+also an atom. Here is an example:
+
+     '(this list includes "text between quotation marks.")
+
+In Lisp, all of the quoted text including the punctuation mark and the
+blank spaces is a single atom. This kind of atom is called a string
+(for "string of characters") and is the sort of thing that is used for
+messages that a computer can print for a human to read. Strings are a
+different kind of atom than numbers or symbols and are used
+differently.
+
+*** 1.1.2 Whitespace in Lists
+--------------------------------------------------------------------
+
+The amount of whitespace in a list does not matter. From the point of
+view of the Lisp language.
+
+'(this list
+looks like this)
+
+is exactly the same as this:
+
+'(this list looks like this)
+
+Both examples show what to Lisp is the same list, the list made up of
+the symbols 'this', 'list', 'looks', 'like' in that order.
+
+Extra whitespace and newlines are designed to make a list more
+readable by humans. When Lisp reads the expression, it gets rid of all
+the extra whitespace (but it needs to have at least one space between
+atoms in order to tell them apart.)
+
+Odd as it seems, the examples we have seen cover almost all of what
+Lisp lists except that the list may in Lisp looks more or less like
+one of these examples, except that the list may be longer and more
+complex. In brief, a list is between parentheses, a string is between
+quotation marks, a symbol looks like a word, and a number looks like a
+number. (For certain situations, square brackets, dots and a few other
+special characters may be used; however, we will go quite far without
+them.)
+
+*** 1.1.3 GNU Emacs Helps You Type Lists
+---------------------------------------------------------------------
+
+When you type a Lisp expression in GNU Emacs using either Lisp
+Interaction mode or Emacs Lisp mode, you have available to you several
+commands to format the Lisp expression so it is easy to read. For
+example, pressing the TAB key automatically indents the line the
+cursor is on by the right amount. A command to properly indent the
+code in a region is customarily bound to M-C-\. Indentation is
+designed so that you can see which elements of a list belong to which
+list--elements of a sub-list are indented more than the elements of
+the enclosing list.
+
+In addition, when you type a closing parenthesis, Emacs momentarily
+jumps the cursor back to the matching opening parenthesis, so you can
+see which one it is. This is very useful, since every list you type in
+Lisp must have its closing parenthesis match its opening
+parenthesis. (See Section "Major Modes" in /The GNU Emacs Manual/, for
+more information about Emacs's modes.)
+** 1.2 Run a Program
+---------------------------------------------------------------------
+A list in Lisp--any list--is a program ready to run. If you run it
+(for which the Lisp jargon is /evaluate/), the computer will do one of
+three things: 
+- do nothing except return to you the list itself;
+- send you an error message;
+- or, threat the first symbol in the list as a command to do
+  something. 
+(Usually, of course, it is the last of these three things that you
+really want!)
+
+The single apostrophe, ', that I put in front of some of the example
+lists in preceding sections is called a quote; when it precedes a
+list, ait tells Lisp to do nothing with the list, other than take it
+as it is written. But if there is no quote preceding a list, the first
+item of the list is special: it is a command for the computer to
+obey. (In Lisp, these commands are called /functions/.) The list (+
+2 2) shown above did not have a quote in front of it, so Lisp
+understands that the + is an instruction to do something with the rest
+of the list: add the numbers that follow.
+
+If you are reading this inside of GNU Emacs in Info, here is how you
+can evaluate such a list: place your cursor immediately after the right
+hand parenthesis of the following list and then type /C-x C-e:/
+
+:    (+ 2 2)
+
+You will see the number 4 appear in the echo area[fn:1]. (What you have
+just done is evaluate the list. The echo area is the line at the
+bottom of the screen that displays or echoes text.) Now try the same
+thing with a quoted list: place the cursor right after the following
+list and type /C-x C-e/:
+
+:    '(this is a quoted list)
+
+You will see (this is a quoted list) appear in the echo area.
+
+In both cases, what you are doing is giving a command to the program
+inside of GNU Emacs called the /Lisp interpreter/--giving the
+interpreter a command to evaluate the expression. The name of the Lisp
+interpreter comes from the word for the task done by a human who comes
+up with the meaning of an expression--who interprets it.
+
+You can also evaluate an atom that is not part of a list--one that is
+not surrounded by parentheses; again, the Lisp interpreter translates
+from the humanly readable expression to the language of the
+computer. But before discussing this (see Section 1.7 "Variables",
+page 9), we will discuss what the Lisp interpreter does when you make
+an error.
+
+** 1.3 Generate an Error Message
+---------------------------------------------------------------------
+Partly so you won't worry if you do it accidentally, we will now give a command to
+the Lisp interpreter that generates an error message. This is a harmless activity;
+and indeed, we will often try to generate error messages intentionally. Once you
+understand the jargon, error messages can be informative. Instead of being called
+"error" messages, they should be called "help" messages. They are like signposts to
+a traveler in a strange country; deciphering them can be hard, but once understood,
+they can point the way.
+
+   The error message is generated by a build-in GNU Emacs debugger. We will enter
+the debugger. You get out of the debugger by typing q.
+
+   What we will do is evaluate a list that is not quoted and does not have a
+meaningful command as its first element. Here is a list almost exactly the same as
+the one we just used, but without the single-quote in front of it. Position the
+cursor right after it and type C-x C-e:
+    
+    (this is an unquoted list)
+
+    A *Backtrace* window will open up and you should see the following in it:
+Your cursor will be in this window (you may have to wait a few seconds before it
+becomes visible). To quit the debugger and make the debugger window go away, type:
+
+    /q/
+
+Please type /q/ right now, so you become confident that you can get out of the
+debugger. Then, type /C-x C-e again to re-enter it.
+
+   Based on what already know, we can almost read this error message.
+
+   You read the \*Backtrace\* buffer from the bottom up; it tells you what Emacs
+did. When you typed /C-x C-e/, you made an interactive call to the command
+*eval-last-sexp*. *eval* is an abbreviation for "evaluate" and *sexp* is an
+abbreviation for "symbolic expression". The command means "evaluate last symbolic
+expression", which is the expression just before your cursor.
+
+   Each line above tells you what the Lisp interpreter evaluated next. The most
+recent action is at the top. The buffer is called the *Backtrace* buffer because it
+enables you to track Emacs backwards.
+
+   At the top of the **Backtrace** buffer, you see the line:
+
+   *Debugger entered--Lisp error: (void-function this)
+
+The Lisp interpreter tried to evaluate the first atom of the list, the word
+'this'. It is this action that generated the error message 'void-function this'.
+The message contains the words 'void-function' and 'this'.  
+
+   The word 'function' was mentioned once before. It is a very important word. For
+our purposes, we can define it by saying that a /function/ is a set of instructions
+to the computer that tell the computer to do something.
+
+   Now we can begin to understand the error message: 'void-function this;. The
+function (that is, the word 'this') does not have a definition of any set of
+instructions for the computer to carry out.
+
+   The slightly odd word, 'void-function', is designed to cover the way Emacs Lisp
+is implemented, which is that when a symbol does not have a function definition
+attached to it, the place that should contain the instructions is void.
+
+   On the other hand, since we were able to add 2 plus 2 successfully, by
+evaluating (+ 2 2), we can infer that the symbol + must have a set of instructions
+for the computer to obey and those instructions must be to add the numbers that
+follow the +.
+
+   It is possible to prevent Emacs entering the debugger in cases like this. We do
+not explain how to do that here, but we will mention what the result looks like,
+because you may encounter a similar situation if there is a bug in some Emacs code
+that you are using. In such cases, you will see only one line of error message; it
+will appear in the echo area and look like this:
+  
+   Symbols's function definition is void: this
+
+The message goes away as soon as you type a key, even just to move the cursor.
+
+   We know the meaning of the word 'Symbol'. It refers to the first atom of the list,
+the word 'this'. The word 'function' refers to the instructions that tell the
+computer what to do. (Technically, the symbol tells the computer where to find the
+instructions, but this is a complication we can ignore for the moment.)
+
+   The error message can be understood: 'Symbol's function definition is void::
+this'. The symbol (that is, the word 'this') lacks instructions for the computer to
+carry out.
+
+** 1.4 Symbol Names and Functions Definitions    
+
+We can articulate another characteristic of Lisp based on what we have
+discussed so far--an important characteristic: symbol, like +, is not
+itself the set of instructions for the computer to carry out. Instead,
+the symbol is used, perhaps temporarily, as a way of locating the
+definition or set of instructions. What we see is the name through
+which the instructions can be found. Names of people work the same
+way. I can be referred to as 'Bob'; however, I am not the letters 'b',
+'o', 'b' but am, or was the consciousness  consistently associated with
+a particular life-form. The name is not me, but it can be used to
+refer to me.
+
+In Lisp, one set of instructions can be attached to several names. For
+example, the computer instructions for adding numbers can be linked to
+the symbol plus as well as to the symbol + (and are in some dialects
+of Lisp). Among humans, I can be referred to as 'Robert' as well as
+'Bob' and by other words as well.
+
+On the other hand, a symbol can have only one function definition
+attached to it at a time. Other wise, the computer would be confused
+as to which definition to use. If this were the case among people,
+only one person in the world could be named 'Bob'. However,
+the function definition to which the name refers can be changed
+readily[fn:2]. (See Section 3.2 "Install a Function Definition", page 28.)
+
+Since Emacs Lisp is large, it is customary[fn:3] to name symbols in a
+way that identifies[fn:4] the part of Emacs to which the function
+belongs. Thus, all the names for functions that deal with Texinfo
+start with 'texinfo-' and those for functions that deal with reading
+mail start with 'rmail-'.
+
+** 1.5 The Lisp Interpreter[fn:5]
+
+Based on what we have seen, we can now start to figure out what the
+Lisp interpreter does when we command it to evaluate a list. First, it
+looks to see whether there is a quote before the list; if there is,
+the interpreter just gives us the list. On the other hand, if there is
+no quote, the interpreter looks at the first element in the list and
+sees whether it has a function definition. If it does, the interpreter
+carries out the instructions in the function definition. Otherwise,
+the interpreter prints an error message.
+
+- quote if T return list, F to 2 (T: with a quote, F: without a quote)
+- looks at the first element whether a function definition(T:carries
+  out the instructions, F: prints an error message)
+
+This is how Lisp works. Simple. There are added complications
+which we will get to in a minute, but these are the fundamentals. Of
+course, to write Lisp programs, you need to know how to write function
+definitions and attach them to names, and how to do this without
+confusing either yourself or the computer.
+
+Now, for the first complication. In addition to lists, the Lisp
+interpreter can evaluate a symbol that is not quoted and does not have
+parentheses around it. The Lisp interpreter will attempt to determine
+the symbol's value as a variable. This situation is described in the
+section on variables. (See Section 1.7 "Variables", page 9.)
+
+The second complication occurs because some functions are unusual and
+do not work in the usual manner. Those that don't are called special
+forms. They are used for special jobs, like defining a function, and
+there are not many of them. In the next few chapters, you will be
+introduced to several of the more important special forms.
+
+As well as special forms, there are also macros. A macro is a
+construct defined in Lisp, which differs from a function in that it
+translate a Lisp expression into another expression that is to be
+evaluated in place of the original expression. (See Section 8.2.2
+"Lisp macro", page 85.)
+
+For the purpose of this introduction, you do not need to worry too
+much about whether something is a special form, macro, or ordinary
+function. For example, if is a special form (see Section 3.7 "if",
+page 35), but when is a macro (see Section 3.1 "defun", page 26). It
+still behaves in the same way.
+
+The final complication is this: if the function that the Lisp
+interpreter looks to see whether the list has a list inside it. If
+there is an inner list, the Lisp interpreter first figures out what it
+should do with the inside list, and then it works on the outside
+list. If there is yet another list embedded inside the inner list, it
+works on that one first and so on. It always works on the innermost
+list first. The interpreter works on the innermost list first, to
+evaluate the result of that list. The result may be used by the
+enclosing expression.
+
+Otherwise, the interpreter works left to right, from one expression to
+the next.
+
+*** 1.5.1 Byte Compiling
+-------------------------------------------------------------------------------
+One other aspect of interpreting: the Lisp interpreter is able to
+interpret two kinds of entity: humanly readable code, on which we will
+focus exclusively, and specially processed code, called byte compiled
+code, which is not humanly readable. Byte compiled code runs faster
+than humanly readable code.
+
+You can transform humanly readable code into byte compiled code by
+running one of the compile commands such as byte-compile-file. Byte
+compiled code is usually stored in a file that ends with a .elc
+extension rather than a el extension. You will see both kinds of file
+in the emacs/lisp directory; the files to read are those with .el
+extensions. 
+
+As a practical matter, for most things you might do to customize or
+extend Emacs, you do not need to byte compile; and I will not discuss
+the topic here. See Section "Byte Compilation" in The GNU Emacs Lisp
+Reference Manual, for a full description of byte compilation.
+
+** 1.6 Evaluation
+
+When the Lisp interpreter works on an expression, the term for the
+activity is called evaluation. We say that the interpreter "evaluates
+the expression". I've used this term several times before. The word
+comes from its use in everyday language, "to ascertain the value or
+amount of; to appraise", according to Webster's New Collegiate
+Dictionary. 
+
+After evaluating an expression, the Lisp interpreter will most likely
+return the value that the computer produces by carrying out the
+instructions it found in the function definition, or perhaps it will
+give up on that function and produce an error message. (The
+interpreter may also find itself tossed, so to speak, to a different
+function or it may attempt to repeat continually what it is doing for
+ever and ever in an infinite loop. These actions are less common; and
+we can ignore them.) Most frequently, the interpreter returns a
+value. 
+
+At the same time the interpreter returns a value, it may do something
+else as well, such as move a cursor or copy a file; this other kind of
+action is called a side effect. Actions that we humans think are
+important, such as printing results, are often side effects to the
+Lisp interpreter. It is fairly easy to learn to use side effects. 
+
+In summary, evaluating a symbolic expression most commonly causes the
+Lisp interpreter to return a value and perhaps carry out a side
+effect; or else produce an error.
+
+*** 1.6.1 Evaluating Inner Lists
+
+If evaluation applies to a list that is inside another list, the outer
+list may use the value returned by the first evaluation as information
+when the outer list is evaluated. This explains why inner expressions
+are evaluated first: the values they return are used by the outer
+expressions. 
+
+We can investigate this process by evaluating another addition
+example. Place your cursor after the following expression and type /C-x
+C-e/: 
+
+    (+ 2 (+ 3 3))
+
+The number 8 will appear in the echo area.
+
+What happens is that the Lisp interpreter first evaluates the inner
+expression, (+ 3 3), for which the value 6 is returned; then it
+evaluates the outer expression as if it were written (+ 2 6), which
+returns the value 8. Since there are no more enclosing expressions to
+evaluate, the interpreter prints that value in the echo area.
+
+Now it is easy to understand the name of the command invoked by the
+keystrokes /C-x C-e/: the name is eval-last-sexp. The letters sexp are
+an abbreviation for "symbolic expression", and eval is an abbreviation
+for "evaluate". The command evaluates the last symbolic expression.
+
+As an experiment, you can try evaluating the expression by putting the
+cursor at the beginning of the next line immediately following the
+expression, or inside the expression.
+
+Here is another copy of the expression:
+
+    (+ 2 (+ 3 3))
+
+If you place the cursor at the beginning of the blank line that
+immediately follows the expression and type /C-x C-e/, you will still
+get the value 8 printed in the echo area. Now try putting the cursor
+inside the expression. If you put it right after the next to last
+parenthesis (so it appears to sit on top of the last parenthesis), you
+will get a 6 printed in the echo area! This is because the command
+evaluates the expression (+ 3 3). 
+
+Now put the cursor immediately after a number. Type /C-x C-e/ and you
+will get the number itself. In Lisp, if you evaluate a number, you get
+the number itself--this is how number differ from symbols. If you
+evaluate a list starting with a symbol like +, you will get a value
+returned that is the result of the computer carrying out the
+instructions in the function definition attached to that name. If a
+symbol by itself is evaluated, something different happens, as we will
+see in the next section.
+
+** 1.7 Variables
+
+In Emacs Lisp, a symbol can have a value attached to it just as it can have a
+function definition attached to it. The two are different. The function definition
+is a set of instructions that a computer will obey. A value, on the other hand, is
+something, such as number or a name, that can vary (which is why such a symbol is
+called a variable). The value of a symbol can be any expression in Lisp, such as a
+symbol, number, list, or string. A symbol that has a value is often called a
+/variable/.
+
+A symbol can have both a function definition and a value attached to it at the same
+time. Or it can have just one or the other. The two are separate. This is somewhat
+similar to the way the name Cambridge can refer to the city in Massachusetts and
+have some information attached to the name as well, such as "great programming
+center".
+
+Another way to think about this is to imagine a symbol as being a chest of
+drawers. The function definition is put in one drawer, the value in another, and so
+on. What is put in the drawer holding the value can be changed without affecting the
+contents of the drawer holding the function definition, and vice versa. 
+
+The variable fill-column illustrates a symbol with a value attached to it: in every
+GNU Emacs buffer, this symbol is set to some value, usually 72 or 70, but sometimes
+to some other value. To find the value of this symbol, evaluate it by itself. If you
+are reading this in Info inside of GNU Emacs, you can do this by putting the cursor
+after the symbol and typing /C-x C-e/:
+
+    fill-column
+
+After I typed /C-x C-e/, Emacs printed the number 72 in my echo area. This is the
+value for which fill-column is set for me as I write this. It may be different for
+you in your Info buffer. Notice that the value returned as a variable is printed in
+exactly the same way as the value returned by a function carrying out its
+instructions. From the point of view of the Lisp interpreter, a value returned is a
+value returned. What kind of expression it came from ceases to matter once the value
+is known.
+
+A symbol can have any value attached to it or, to use the jargon, we can bind the
+variable to a value: to a number, such as 72; to a string, "such as this"; to a list,
+such as (spruce pine oak); we can even bind a variable to a function definition.
+
+A symbol can be bound to a value in several ways. See Section 1.0 "Setting the Value
+of a Variable", page 16, for information about one way to do this.
+
+
+** 1.11 Exercises
+*** E1
+: test; (run C-x C-e)
+: >> Symbols's value as variable is void: test
+*** E2
+: (test); (run C-x C-e)
+: >> Symbols's function definition is void: test
+*** E3
+: (setq counter 0)
+: (setq counter (+ 2 counter))
+*** E4
+: (message "this is n message (%s)" "message inside it")
+*** E5
