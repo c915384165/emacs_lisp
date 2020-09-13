@@ -1,0 +1,41 @@
+* 4 A Few Buffer-Related Functions
+In this chapter we study in detail sevaral of the functions used in GNU
+Emacs. This is called a "walk-through". These functions are used as examples of
+Lisp code, but are not imaginary examples; with the exception of the first,
+simplified function definition, these functions show the actual code used in GNU
+Emacs. You can learn a great deal from these definition. The functions described
+here are all related to buffers. Later, we will study other functions.
+
+** 4.1 Finding More Information
+
+In this walk-through, I will describe each new function as we come to it,
+sometimes in detail and sometimes briefly. If you are interested, you can get
+the full documentation of any Emacs Lisp function at any time by typing C-h f
+and then the name of the function (and then RET). Similarly, you can get the
+full documentation for a variable by typing C-h v and then the name of the
+variable (and then RET).
+
+Also, describe-function will tell you the location of the function definition. 
+
+Put the point into the name of the file that contains the function and press the
+RET key. In this case, RET means push-button rather than "return" or
+"enter". Emacs will take you directly to the function definition.
+
+More generally, if you want to see a function in its original source file, you
+can use the xref-find-definitions function to jump to it. xref-find-definitions
+works with a wide variety of languages, not just Lisp, and C, and it works with
+non-programming text as well. For example, xref-find-definitions will jump to
+the various nodes in the Texinfo source file of this document (provided that
+you;ve run the etags utility to record all the nodes int the manuals that come
+with Emacs; see Section "Create tags Table" in The GNU Emacs Manual).
+
+#+begin_src lisp
+  (defun simplified-beginning-of-buffer ()
+    "Move point to the beginning of the buffer;
+  leave mark at previous position."
+    (interactive)
+    (push-mark)
+    (goto-char (point-min)))
+#+end_src
+
+** 4.3 The Definition of mark-whole-buffer

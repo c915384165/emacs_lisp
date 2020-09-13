@@ -713,6 +713,26 @@ a let expression. It looks like this:
     (save-excursion
       body..))
 #+end_src
+** 3.11 Review
+In the last few chapters we have introduced a macro and a fair number of
+functions and special forms. 
+In the last few chapters we have introduced a macro and a fair number of
+functions and special forms.
+Here they are described in brief, along with a few similar function that have
+not been mentioned yet.
+[a fair number of]
+--------------------------------------------------------------------------------
+string-equal
+#+begin_src lisp
+  (string< "about" "second")
+  (string< "a" "aa")
+  (string> "a" "aa")
+  (string< "a" "b")
+  (string< "a" "bb")
+  (string> "about" "bbout")
+  (string> "about" "cbout")
+#+end_src
+
 ** 3.12 Exercises
 #+begin_src lisp
   ;; 3.12 Exercises
