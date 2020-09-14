@@ -39,3 +39,133 @@ with Emacs; see Section "Create tags Table" in The GNU Emacs Manual).
 #+end_src
 
 ** 4.3 The Definition of mark-whole-buffer
+
+The mark-whole-buffer function is no harder to understand than the
+simplified-beginning-of-buffer fuction. In this case, we will look at the
+complete function, not a shortened version.
+
+The mark-whole-buffer function is not as commonly used as the
+beginning-of-buffer function, but is useful nonetheless: it marks a whole buffer
+as a region by putting point at the beginning and a mark at then end of the
+buffer. It is generally bound to C-x h.
+
+In GNU Emacs 22, the code for the complete function looks like this:
+#+begin_src lisp
+  (defun mark-whole-buffer ()
+    "Put point at beginning and mark at end of buffer.
+  You probaly shoud not use this function in Lisp programs; it is
+  usually a mistake for a Lisp function to use any subroutine that uses
+  or set the mark."
+    (interactive)
+    (push-mark (point))
+    (push-mark (point-max) nil t)
+    (goto-char (point-min)))
+
+#+end_src
+
+Like all other functions, the mark-whole-buffer function fits into the template
+for a function definition. The template looks like this:
+...
+
+Here is how the function works: the name of the function is mark-whole-buffer;
+it is followed by an empty argument list, '()', which means that the function
+does not require arguments. The documentation comes next.
+
+The next line is an (interactive) expression that tells Emacs that thf function
+will be used interactively. These details are similar to the
+simplified-beginning-of-buffer function described in the previous section.
+
+*** 4.3.1 Body of mark-whole-region
+
+The bodyo of the makr-whole-region function consists of three lines of code:
+#+begin_src lisp
+  (push-mark (point))
+  (push-mark (point-max) nil t)
+  (push-mark (point-min))
+#+end_src
+
+The first of these lines is the expression, (push-mark (point)).
+
+This line does exactly the same job as the first line of the body the
+simplified-beginning-of-buffer function which is written (push-mark). In both
+cases, the lisp interpreter sets a mark at the current position of the cursor.
+
+I don't know why the expression in mark-whole-buffer is written (push-mark
+(point)) and the expression in beginning-of-buffer is written
+(push-mark). Perhaps whoever wrote the code did not passed an argument, the
+function automatically sets mark at the location of point by default. Or perhaps
+the expression was written so as to parallel the structure of the next line. In
+any case, the line causes Emacs to determine the position of point and set a mark
+here. 
+
+In early versions of GNU Emacs, the next line of mark-whole-buffer was
+(push-mark (point-max)). This expression sets a mark at the point in the buffer
+that has the highest number. This will be the end of the buffer (or, if the
+buffer is narrowed, the end of the accessible portion of the buffer. See Chapter
+6 "Narrowing and Widening", page 67, for more about narrowing.) After this mark
+has been set, the previous mark, the one set at point, is no longer set, but
+Emacs remembers its position, just as all other recent marks are always
+remembered. This means that you can, if you wish, go back to that position by
+typing C-u C-SPC twice.
+
+In GNU Emacs 22, the (point-max) is slightly more complicated. The line reads
+#+begin_src lisp
+  (push-mark (point-max) nil t)
+#+end_src
+
+The expression works nearby the same as before. It sets a mark at the highest
+numbered place in the buffer that it can. However, in this version, push-mark
+has two additional arguments. The second argument to push-mark is nil. This
+tells the function it should display a message that says "Mark set" when it
+pushes the mark. The third argument is t. This tells push-mark to activate the
+mark when Transient Mark mode is turned on.
+
+Finally, the last line of the function is (goto-char (point-min))). This is
+written exactly the same way as it is written in beginning-of-buffer. The
+expression moves the cursor to the minimum point in the buffer, that is, to the
+beginning of the buffer (or to the beginning of the accessible portion of the
+buffer). As a result of this, point is placed at the beginning of the buffer and
+mark is set at the end of the buffer. The whole buffer is, therefore, the
+region. 
+
+** 4.4 The Definition of append-to-buffer
+
+The append-to-buffer command is more complex than the mark-whole-buffer
+command. What it does is copy the region (that is, the part of the buffer
+between point and mark) from the current buffer to a specified buffer.
+
+The append-to-buffer command uses the insert-buffer-substring function to copy
+the region. insert-buffer-substring is described by its name: it takes a
+substring from a buffer, and inserts it into another buffer.
+
+Most of append-to-buffer is concerned with setting up the conditions for
+insert-buffer-substring to work: the code must specify both the buffer to which
+the text will go, the window it comes from and goes to, and the region that will
+be copied.
+
+#+begin_src lisp
+  (defun append-to-buffer (buffer start end)
+    "Append to specified buffer the text of the region.
+  It is inserted into that buffer before its point.
+
+  When calling from a program, give three arguments:
+  BUFFER (or buffer name), START and END.
+  START and END specify the portion of the current buffer to be copied."
+    (interactive
+     (list (read-buffer "Append to buffer: " (other-buffer
+					      (current-buffer) t))
+	   (region-beginning)
+	   (region-end)))
+    (let ((oldbuf (current-buffer)))
+      (save-excursion
+	(let* ((append-to (get-buffer-create buffer))
+	       (windows (get-buffer-window-list append-to t t))
+	       point)
+	  (set-buffer append-to)
+	  (setq point (point))
+	  (barf-if-buffer-read-only)
+	  (insert-buffer-substring oldbuf start end)
+	  (dolist (window windows)
+	    (when (= (window-point window) point)
+	      (set-window-point widow (point))))))))
+#+end_src 
