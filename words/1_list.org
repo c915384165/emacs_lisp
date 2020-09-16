@@ -1,0 +1,119 @@
+#+options: num:nil toc:nil
+* process                                                     :verb:noun:adj:
+** v.
+1. to move forward in a [[procession][procession]]
+2. to treat or prepare something in a series of steps or actions, [[e.g.]] using
+   chemicals or industrial [[machinery]].
+3. to treat light-sensitive film or paper with chemicals in order to make a
+   [[latent]] image visible
+4. to deal with somebody or something according to an established [[procedure]]
+5. to [[chop]], mix, or otherwise prepare food in a food [[processor]] or [[blender]]
+6. to use a computer program to work on data in some way, e.g. to sort a
+   database or recalculate a spreadsheet
+7. to serve a summons or writ on somebody
+8. to bring a legal action against somebody
+9. to discuss the [[interpersonal]] dynamics and emotional content of an event or
+   situation
+10. to deal with a document officially so that something can happen
+** n.
+1. a series of natural [[occurrences]] that produce change or development
+2. the entire proceedings in a [[lawsuit]]
+3. a [[summons]] or [[writ]] ordering somebody to appear in [[court]]
+4. a part that naturally grows on or sticks out on an [[organism]]
+5. a series of actions directed towards a [[specific]] aim
+6. a series of things that happen and have a particular result
+7. an official document ordering you to take part in a case in a court of law
+** adj.
+1. treated or prepared using a special process
+* procession
+** n.
+1. a group of people or [[vehicles]] moving forward in a line as part of a
+   [[celebration]], [[commemoration]], or [[demonstration]]
+2. the movement forward of a group of people or [[vehicles]] as part of a
+   [[celebration]], [[commemoration]], or demonstration
+3. a series of people or things coming one after the other
+4. a line of people or vehicles moving in a slow and [[formal]] way as part of an
+   event
+** v.
+* machinery
+** n.
+1. machines collectively or in general
+2. the aggregate parts that make up a machine or group of machines
+3. a system of machines working together
+4. an [[interconnected]] series of parts or processes that works like a mechanical
+   system to produce a result
+5. literary devices used for effect, especially in poetry, or to resolve the
+   plot of a play or book
+6. an established system for doing something
+* latent
+** adj.
+1. present or existing, but in an underdeveloped or unexpressed form
+2. dormant or undeveloped but able to develop normally under suitable conditions
+3. present in the unconscious but not consciously expressed
+4. something that is latent exists but is not obvious and has not developed yet
+* procedure
+** n.
+1. an established or correct method of doing something
+2. any means of doing or accomplishing something
+3. a way of doing something, especially the correct or usual way
+4. a medical operation that is done in a particular way
+* blender
+** n.
+1. an electrical kitchen appliance used to liquidize and blend foods
+2. somebody or something that blends things, especially a person or company that
+   blends foods or drinks
+3. a piece of electrical equipment that mixes foods or turns soft food into a
+   liquid
+* chop
+** n.
+1. a small piece of red meat cut from the [[ribs]], [[loin]], or [[shoulder]], usually with
+   the bone still attached
+2. a wooden, metal, or rubber stamp used to [[frank]] documents or seal envelopes
+3. a sudden strong downward blow with the hand or a cutting tool
+4. especially in East Asia, a trademark, official stamp, or mark of quality
+5. dismissal from a job
+6. turbulent irregular motion in waves or water
+7. a stretch of choppy water, especially on the sea
+8. food
+9. the cancellation, closedown, or stoppage of something
+10. an act of hitting someone or something hard with the side of your hand
+* e.g.
+* processor
+* interpersonal
+* lawsuit
+* occurrences
+* court
+* summons
+* writ
+* vehicles
+* celebration
+* specific
+* organism
+* Footnotes
+* commemoration
+* demonstration
+* formal
+* ribs
+* loin
+* shoulder
+* interconnected
+* frank
+* ancient
+** adj.
+1. very old
+2. belonging to the distant past, especially to the time before the collapse of
+   the Western Roman Empire in 476
+3. relating to people who lived thousands of years ago, and to their way of life
+** n.
+1. a member of a civilization of the distant past
+2. a very mature or venerable person
+** np.
+1. the people who lived in one of the ancient civilizations, especially Greece
+   and Rome
+2. the authors of ancient Greece and Rome, whose writings form the basis of the
+   classics as a subject of study
+* interior
+** n.
+1. [c][ususing]the inside part of sth
+2. [sing] the central part of a country continent that is a long way from the coast
+3. [sing] a country's own affairs rather than those that involve other countries
